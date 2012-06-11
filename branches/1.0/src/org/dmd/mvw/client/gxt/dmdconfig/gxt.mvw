@@ -14,3 +14,10 @@ description			The gxtCache provides centralized caching of Dark Matter Objects (
  you should ensure that the component performing the retrieval has called addWrapperFactory()
  on the cache to add the appropriate GxtWrapperFactoryIF implementation to wrap the objects as
  they are added.
+
+EnumMappingGenerator
+camelCaseName		GXTEnumGenerator
+enumGeneratorClass	org.dmd.mvw.extensions.GxtEnumMappingFormatter
+description			The GXTEnumGenerator will create a set of GxtEnumValue instances
+ to represent each of the values in your enum. The GxtEnumValue is derived from the 
+ com.extjs.gxt.ui.client.data.BaseModel that is used in GXT's ComboBox widgets.
