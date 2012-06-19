@@ -1,7 +1,8 @@
+Manifest-Version: 1.0
 Name: dark-matter-gxt
 Specification-Title: dark-matter GXT 2.2.4 support for MVW
 Specification-Version: 1.1.0
 Specification-Vendor: dark-matter-data committers
 Implementation-Title: org.dmd.mvw.client.gxt
-Implementation-Version: svn16
+Implementation-Version: svn17
 Implementation-Vendor: dark-matter-data committers
