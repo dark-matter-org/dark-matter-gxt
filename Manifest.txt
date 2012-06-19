@@ -1,0 +1,7 @@
+Name: dark-matter-gxt
+Specification-Title: dark-matter GXT support for MVW
+Specification-Version: 1.1.0
+Specification-Vendor: dark-matter-data committers
+Implementation-Title: org.dmd.mvw.client.gxt
+Implementation-Version: svn16
+Implementation-Vendor: dark-matter-data committers
