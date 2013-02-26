@@ -2,14 +2,14 @@ package org.dmd.dmt.client.generated.gxt;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.dmg.generators.BaseDMWGeneratorNewest.dumpWrapper(BaseDMWGeneratorNewest.java:349)
-import java.util.Iterator;                                      // Multi-valued attribute access - (BaseDMWGeneratorNewest.java:2387)
-import org.dmd.dmc.*;                                           // If any attributes - (BaseDMWGeneratorNewest.java:903)
-import org.dmd.dmc.types.StringToString;                        // Primitive type - (BaseDMWGeneratorNewest.java:966)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                     // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:892)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;           // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:891)
+import java.util.Iterator;                                      // Multi-valued attribute access - (BaseDMWGeneratorNewest.java:2393)
+import org.dmd.dmc.*;                                           // If any attributes - (BaseDMWGeneratorNewest.java:905)
+import org.dmd.dmc.types.StringToString;                        // Primitive type - (BaseDMWGeneratorNewest.java:968)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                     // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:894)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;           // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:893)
 import org.dmd.dmt.shared.generated.dmo.DmtDMSAG;               // Attribute tmString from the dmt schema - (BaseDMWGeneratorNewest.java:723)
-import org.dmd.dmt.shared.generated.dmo.PrimitiveTMDMO;         // Class not auxiliary or abstract - (BaseDMWGeneratorNewest.java:1068)
-import org.dmd.mvw.client.gxt.dmw.GxtWrapper;                   // Unnamed object wrapper - (BaseDMWGeneratorNewest.java:1051)
+import org.dmd.dmt.shared.generated.dmo.PrimitiveTMDMO;         // Class not auxiliary or abstract - (BaseDMWGeneratorNewest.java:1070)
+import org.dmd.mvw.client.gxt.dmw.GxtWrapper;                   // Unnamed object wrapper - (BaseDMWGeneratorNewest.java:1053)
 
 
 /**
@@ -50,7 +50,7 @@ public class PrimitiveTMGXT extends GxtWrapper {
     /**
      * @return The number of StringToStringDMO items.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2152)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2158)
     public int getTmStringSize(){
         DmcAttribute<?> attr = ((PrimitiveTMDMO) core).get(DmtDMSAG.__tmString);
         if (attr == null)
@@ -62,7 +62,7 @@ public class PrimitiveTMGXT extends GxtWrapper {
     /**
      * @return true if there are no StringToStringDMO items.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2164)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2170)
     public boolean getTmStringIsEmpty(){
         DmcAttribute<?> attr = ((PrimitiveTMDMO) core).get(DmtDMSAG.__tmString);
         if (attr == null)
@@ -74,7 +74,7 @@ public class PrimitiveTMGXT extends GxtWrapper {
     /**
      * @return true if there are any StringToStringDMO items.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2176)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2182)
     public boolean getTmStringHasValue(){
         DmcAttribute<?> attr = ((PrimitiveTMDMO) core).get(DmtDMSAG.__tmString);
         if (attr == null)
@@ -86,7 +86,7 @@ public class PrimitiveTMGXT extends GxtWrapper {
     /**
      * @return The keyed StringToString object if it's available and null otherwise.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2205)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2211)
     public StringToString getTmString(Object key){
         return(((PrimitiveTMDMO) core).getTmString(key));
     }
@@ -94,7 +94,7 @@ public class PrimitiveTMGXT extends GxtWrapper {
     /**
      * @return the first key of the map.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2223)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2229)
     public String getTmStringFirstKey(){
         return(((PrimitiveTMDMO) core).getTmStringFirstKey());
     }
@@ -102,7 +102,7 @@ public class PrimitiveTMGXT extends GxtWrapper {
     /**
      * @return An Iterator of StringToString objects.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2391)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2397)
     public Iterator<StringToString> getTmString(){
         return(((PrimitiveTMDMO) core).getTmString());
     }
@@ -111,7 +111,7 @@ public class PrimitiveTMGXT extends GxtWrapper {
      * Adds another tmString value.
      * @param value A value compatible with StringToString
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2404)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2410)
     public void addTmString(Object value) throws DmcValueException {
         ((PrimitiveTMDMO) core).addTmString(value);
     }
@@ -120,7 +120,7 @@ public class PrimitiveTMGXT extends GxtWrapper {
      * Adds another tmString value.
      * @param value StringToString
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2413)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2419)
     public void addTmString(StringToString value) {
         ((PrimitiveTMDMO) core).addTmString(value);
     }
@@ -129,7 +129,7 @@ public class PrimitiveTMGXT extends GxtWrapper {
      * Deletes a tmString value.
      * @param value The StringToString to be deleted from set of attribute values.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2425)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2431)
     public void delTmString(Object value){
         ((PrimitiveTMDMO) core).delTmString(value);
     }
@@ -138,7 +138,7 @@ public class PrimitiveTMGXT extends GxtWrapper {
      * Deletes a tmString value.
      * @param value The StringToString to be deleted from set of attribute values.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2434)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2440)
     public void delTmString(String value){
         ((PrimitiveTMDMO) core).delTmString(value);
     }
@@ -146,7 +146,7 @@ public class PrimitiveTMGXT extends GxtWrapper {
     /**
      * Removes the tmString attribute value.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2503)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2509)
     public void remTmString(){
         ((PrimitiveTMDMO) core).remTmString();
     }

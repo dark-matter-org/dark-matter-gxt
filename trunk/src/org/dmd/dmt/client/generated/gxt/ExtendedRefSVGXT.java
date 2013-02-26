@@ -2,12 +2,12 @@ package org.dmd.dmt.client.generated.gxt;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.dmg.generators.BaseDMWGeneratorNewest.dumpWrapper(BaseDMWGeneratorNewest.java:349)
-import org.dmd.dmc.*;                                             // If any attributes - (BaseDMWGeneratorNewest.java:903)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                       // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:892)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;             // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:891)
-import org.dmd.dmt.shared.generated.dmo.ExtendedRefSVDMO;         // Class not auxiliary or abstract - (BaseDMWGeneratorNewest.java:1068)
-import org.dmd.dmt.shared.generated.types.SomeRelation;           // DMO reference - (BaseDMWGeneratorNewest.java:958)
-import org.dmd.mvw.client.gxt.dmw.GxtWrapper;                     // Unnamed object wrapper - (BaseDMWGeneratorNewest.java:1051)
+import org.dmd.dmc.*;                                             // If any attributes - (BaseDMWGeneratorNewest.java:905)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                       // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:894)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;             // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:893)
+import org.dmd.dmt.shared.generated.dmo.ExtendedRefSVDMO;         // Class not auxiliary or abstract - (BaseDMWGeneratorNewest.java:1070)
+import org.dmd.dmt.shared.generated.types.SomeRelation;           // DMO reference - (BaseDMWGeneratorNewest.java:960)
+import org.dmd.mvw.client.gxt.dmw.GxtWrapper;                     // Unnamed object wrapper - (BaseDMWGeneratorNewest.java:1053)
 
 
 /**
@@ -48,7 +48,7 @@ public class ExtendedRefSVGXT extends GxtWrapper {
     /**
      * @return A reference to a SomeRelation object.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1262)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1268)
     public SomeRelation getSvExtendedRef(){
         SomeRelation ref = ((ExtendedRefSVDMO) core).getSvExtendedRef();
         if (ref == null)
@@ -61,7 +61,7 @@ public class ExtendedRefSVGXT extends GxtWrapper {
      * Sets the svExtendedRef to the specified value.
      * @param value A value compatible with SomeRelation
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1352)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1358)
     public void setSvExtendedRef(SomeRelation value) {
         ((ExtendedRefSVDMO) core).setSvExtendedRef(value);
     }
@@ -70,7 +70,7 @@ public class ExtendedRefSVGXT extends GxtWrapper {
      * Sets the svExtendedRef to the specified value.
      * @param value A value compatible with SomeRelation
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1372)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1378)
     public void setSvExtendedRef(Object value) throws DmcValueException {
         ((ExtendedRefSVDMO) core).setSvExtendedRef(value);
     }
@@ -78,7 +78,7 @@ public class ExtendedRefSVGXT extends GxtWrapper {
     /**
      * Removes the svExtendedRef attribute value.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1431)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1437)
     public void remSvExtendedRef(){
         ((ExtendedRefSVDMO) core).remSvExtendedRef();
     }

@@ -46,6 +46,7 @@ public class GxtDMWGenerator extends BaseDMWGeneratorNewest {
 	public GxtDMWGenerator(){
 //		sformatter = new SchemaFormatter();
 		
+		DebugInfo.debug("*** ");
 		genContext				= "gxt";
 		genSuffix				= "GXT";
 		baseWrapperImport 		= "org.dmd.mvw.client.gxt.dmw.GxtWrapper";
@@ -75,12 +76,13 @@ public class GxtDMWGenerator extends BaseDMWGeneratorNewest {
 		
 		schema = sm;
 		
+		DebugInfo.debug("*** " + loc.toString());
 		
 		createIfRequired(gendir);
 		
 		createWrappers(config, loc, f, sm);
 		
-		createAutoWrapper(config, loc, f, sm);
+//		createAutoWrapper(config, loc, f, sm);
 		
 		createAutoWrapperNEW(config, loc, f, sm);
 		
@@ -89,44 +91,44 @@ public class GxtDMWGenerator extends BaseDMWGeneratorNewest {
 	///////////////////////////////////////////////////////////////////////////
 	// Initial auto wrapper implementation
 	
-	void createAutoWrapper(DmgConfigDMO config, ConfigLocation loc, ConfigFinder f, SchemaManager sm) throws IOException{
-		
-		SchemaDefinition sd = sm.isSchema(config.getSchemaToLoad());
-
-		init(sd, sm);
-
-		String fn = GenUtility.capTheName(sd.getName().getNameString()) + "GxtWrapperUtil";
-		
-        BufferedWriter 	out = FileUpdateManager.instance().getWriter(gendir, fn + ".java");
-        
-        out.write("package " + sd.getDmwPackage(genContext) + ".generated;\n\n");
-        
-        out.write(imports.getFormattedImports());
-        out.write("\n");
-        
-        out.write("// Generated from: " + DebugInfo.getWhereWeAreNow() + "\n");
-        out.write("public class " + fn + " {\n\n");
-        
-        out.write(getClassConstants());
-        out.write("\n");
-        
-        out.write("    static public GxtWrapper wrapIt(DmcObject obj){\n\n");
-        
-        out.write("        GxtWrapper rc = null;\n\n");
-        
-        out.write("        switch(obj.getConstructionClassInfo().id){\n");
-        out.write(getClassCaseStatements());
-        out.write("        }\n");
-        out.write("\n");
-        out.write("        return(rc);\n");
-        
-        out.write("    }\n\n");
-        
-        out.write("}\n\n");
-        
-        out.close();
-
-	}
+//	void createAutoWrapper(DmgConfigDMO config, ConfigLocation loc, ConfigFinder f, SchemaManager sm) throws IOException{
+//		
+//		SchemaDefinition sd = sm.isSchema(config.getSchemaToLoad());
+//
+//		init(sd, sm);
+//
+//		String fn = GenUtility.capTheName(sd.getName().getNameString()) + "GxtWrapperUtil";
+//		
+//        BufferedWriter 	out = FileUpdateManager.instance().getWriter(gendir, fn + ".java");
+//        
+//        out.write("package " + sd.getDmwPackage(genContext) + ".generated;\n\n");
+//        
+//        out.write(imports.getFormattedImports());
+//        out.write("\n");
+//        
+//        out.write("// Generated from: " + DebugInfo.getWhereWeAreNow() + "\n");
+//        out.write("public class " + fn + " {\n\n");
+//        
+//        out.write(getClassConstants());
+//        out.write("\n");
+//        
+//        out.write("    static public GxtWrapper wrapIt(DmcObject obj){\n\n");
+//        
+//        out.write("        GxtWrapper rc = null;\n\n");
+//        
+//        out.write("        switch(obj.getConstructionClassInfo().id){\n");
+//        out.write(getClassCaseStatements());
+//        out.write("        }\n");
+//        out.write("\n");
+//        out.write("        return(rc);\n");
+//        
+//        out.write("    }\n\n");
+//        
+//        out.write("}\n\n");
+//        
+//        out.close();
+//
+//	}
 	
 	void init(SchemaDefinition sd, SchemaManager schema){
 		allClasses 	= new TreeMap<String, ClassDefinition>();
@@ -134,39 +136,41 @@ public class GxtDMWGenerator extends BaseDMWGeneratorNewest {
 		
 		imports.addImport("org.dmd.dmc.DmcObject", "The object we wrap");
 		imports.addImport("org.dmd.mvw.client.gxt.dmw.GxtWrapper", "The wrapper we return");
+		
+		DebugInfo.debug("*** " + sd.getObjectName().getNameString());
 
-		Iterator<String> dependsOn = sd.getDependsOn();
-		if (dependsOn != null){
-			while(dependsOn.hasNext()){
-				boolean needImport = false;
-				SchemaDefinition dep = schema.isSchema(dependsOn.next());
-				for(ClassDefinition cd: dep.getClassDefList()){
-					if (!cd.generateWrapper(genContext))
-						continue;
-					if (cd.getClassType() == ClassTypeEnum.ABSTRACT)
-						continue;
-					
-					if (cd.getDmwWrapperType(genContext) == WrapperTypeEnum.EXTENDED){
-						String importloc = dep.getDmwPackage(genContext);
-						
-						if (cd.getSubpackage() != null)
-							importloc = dep.getDmwPackage(genContext) + ".extended." + cd.getSubpackage() + ".*";
-						imports.addImport(importloc, "Extended wrappers from the " + dep.getName() + " schema");
-						
-					}
-					else
-						needImport = true;
-					
-					allClasses.put(cd.getName().getNameString(),cd);
-				}
-				
-				if (needImport){
-					imports.addImport(dep.getDmwPackage(genContext) + ".generated." + genContext + ".*", "Access to the wrappers for the " + dep.getName() + " schema");
-					imports.addImport(dep.getSchemaPackage() + ".generated.dmo.*", "Access to the DMOs for the " + dep.getName() + " schema");
-
-				}
-			}
-		}
+//		Iterator<String> dependsOn = sd.getDependsOn();
+//		if (dependsOn != null){
+//			while(dependsOn.hasNext()){
+//				boolean needImport = false;
+//				SchemaDefinition dep = schema.isSchema(dependsOn.next());
+//				for(ClassDefinition cd: dep.getClassDefList()){
+//					if (!cd.generateWrapper(genContext))
+//						continue;
+//					if (cd.getClassType() == ClassTypeEnum.ABSTRACT)
+//						continue;
+//					
+//					if (cd.getDmwWrapperType(genContext) == WrapperTypeEnum.EXTENDED){
+//						String importloc = dep.getDmwPackage(genContext);
+//						
+//						if (cd.getSubpackage() != null)
+//							importloc = dep.getDmwPackage(genContext) + ".extended." + cd.getSubpackage() + ".*";
+//						imports.addImport(importloc, "Extended wrappers from the " + dep.getName() + " schema");
+//						
+//					}
+//					else
+//						needImport = true;
+//					
+//					allClasses.put(cd.getName().getNameString(),cd);
+//				}
+//				
+//				if (needImport){
+//					imports.addImport(dep.getDmwPackage(genContext) + ".generated." + genContext + ".*", "Access to the wrappers for the " + dep.getName() + " schema");
+//					imports.addImport(dep.getSchemaPackage() + ".generated.dmo.*", "Access to the DMOs for the " + dep.getName() + " schema");
+//
+//				}
+//			}
+//		}
 		
 		boolean needImport = false;
 		for(ClassDefinition cd: sd.getClassDefList()){

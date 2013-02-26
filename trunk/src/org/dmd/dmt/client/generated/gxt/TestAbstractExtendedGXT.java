@@ -2,20 +2,20 @@ package org.dmd.dmt.client.generated.gxt;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.dmg.generators.BaseDMWGeneratorNewest.dumpWrapper(BaseDMWGeneratorNewest.java:349)
-import java.util.HashSet;                                                // To support getMVCopy() - (BaseDMWGeneratorNewest.java:1016)
-import java.util.Iterator;                                               // Support copy of MV objects - (BaseDMWGeneratorNewest.java:2048)
-import org.dmd.dmc.*;                                                    // If any attributes - (BaseDMWGeneratorNewest.java:903)
-import org.dmd.dmc.types.IntegerToString;                                // Primitive type - (BaseDMWGeneratorNewest.java:966)
-import org.dmd.dmc.types.StringName;                                     // Primitive type - (BaseDMWGeneratorNewest.java:966)
-import org.dmd.dmt.shared.generated.dmo.ClientCountFilterDMO;            // DMO reference - (BaseDMWGeneratorNewest.java:958)
+import java.util.HashSet;                                                // To support getMVCopy() - (BaseDMWGeneratorNewest.java:1018)
+import java.util.Iterator;                                               // Support copy of MV objects - (BaseDMWGeneratorNewest.java:2054)
+import org.dmd.dmc.*;                                                    // If any attributes - (BaseDMWGeneratorNewest.java:905)
+import org.dmd.dmc.types.IntegerToString;                                // Primitive type - (BaseDMWGeneratorNewest.java:968)
+import org.dmd.dmc.types.StringName;                                     // Primitive type - (BaseDMWGeneratorNewest.java:968)
+import org.dmd.dmt.shared.generated.dmo.ClientCountFilterDMO;            // DMO reference - (BaseDMWGeneratorNewest.java:960)
 import org.dmd.dmt.shared.generated.dmo.DmtDMSAG;                        // Attribute hsStringName from the dmt schema - (BaseDMWGeneratorNewest.java:733)
-import org.dmd.dmt.shared.generated.dmo.TestAbstractExtendedDMO;         // Abstract class - (BaseDMWGeneratorNewest.java:1046)
-import org.dmd.dmt.shared.generated.types.SomeRelation;                  // DMO reference - (BaseDMWGeneratorNewest.java:958)
-import org.dmd.mvw.client.gxt.dmw.GxtWrapper;                            // Unnamed object wrapper - (BaseDMWGeneratorNewest.java:1051)
+import org.dmd.dmt.shared.generated.dmo.TestAbstractExtendedDMO;         // Abstract class - (BaseDMWGeneratorNewest.java:1048)
+import org.dmd.dmt.shared.generated.types.SomeRelation;                  // DMO reference - (BaseDMWGeneratorNewest.java:960)
+import org.dmd.mvw.client.gxt.dmw.GxtWrapper;                            // Unnamed object wrapper - (BaseDMWGeneratorNewest.java:1053)
 
 
 /**
- * The TestAbstract class just defines an abstract base class from which
+ * The TestAbstract class just defines an abstract base class from which\n
  * other test classes can be derived to tes this type of derivation.
  * <P>
  * Generated from the dmt schema at version unknown
@@ -43,7 +43,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * @return The number of ClientCountFilter items.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1483)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1489)
     public int getClientCountFiltersSize(){
         return(((TestAbstractExtendedDMO) core).getClientCountFiltersSize());
     }
@@ -51,7 +51,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * @return true if there are no ClientCountFilterDMO items.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1491)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1497)
     public boolean getClientCountFiltersIsEmpty(){
         if (((TestAbstractExtendedDMO) core).getClientCountFiltersSize() == 0)
             return(true);
@@ -61,7 +61,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * @return true if there are any ClientCountFilterDMO items.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1501)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1507)
     public boolean getClientCountFiltersHasValue(){
         if (((TestAbstractExtendedDMO) core).getClientCountFiltersSize() == 0)
             return(false);
@@ -72,7 +72,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
      * Sets the clientCountFilters value at the specified index.
      * @param value A value compatible with ClientCountFilter
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1766)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1772)
     public DmcAttribute<?> setNthClientCountFilters(int index, ClientCountFilterDMO value){
         return(((TestAbstractExtendedDMO) core).setNthClientCountFilters(index, value));
     }
@@ -80,7 +80,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * @return The ClientCountFilterDMW object at the specified index.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1798)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1804)
     public ClientCountFilterDMO getNthClientCountFilters(int index){
         return(((TestAbstractExtendedDMO) core).getNthClientCountFilters(index));
     }
@@ -88,7 +88,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * Removes the clientCountFilters attribute value.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:2100)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:2106)
     public void remClientCountFilters(){
         ((TestAbstractExtendedDMO) core).remClientCountFilters();
     }
@@ -96,7 +96,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * @return The number of StringName items.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1483)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1489)
     public int getHsStringNameSize(){
         return(((TestAbstractExtendedDMO) core).getHsStringNameSize());
     }
@@ -104,7 +104,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * @return true if there are no StringNameDMO items.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1491)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1497)
     public boolean getHsStringNameIsEmpty(){
         if (((TestAbstractExtendedDMO) core).getHsStringNameSize() == 0)
             return(true);
@@ -114,7 +114,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * @return true if there are any StringNameDMO items.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1501)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1507)
     public boolean getHsStringNameHasValue(){
         if (((TestAbstractExtendedDMO) core).getHsStringNameSize() == 0)
             return(false);
@@ -124,7 +124,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * @return An Iterator of StringName objects.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1930)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1936)
     public Iterator<StringName> getHsStringName(){
         return(((TestAbstractExtendedDMO) core).getHsStringName());
     }
@@ -133,7 +133,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
      * Adds another hsStringName value.
      * @param value A value compatible with StringName
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1943)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1949)
     public void addHsStringName(Object value) throws DmcValueException {
         ((TestAbstractExtendedDMO) core).addHsStringName(value);
     }
@@ -142,7 +142,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
      * Adds another hsStringName value.
      * @param value A value compatible with StringName
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1953)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1959)
     public void addHsStringName(StringName value){
         ((TestAbstractExtendedDMO) core).addHsStringName(value);
     }
@@ -151,7 +151,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
      * Returns true if the collection contains the hsStringName value.
      * @param value A value compatible with StringName
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:2010)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:2016)
     public boolean hsStringNameContains(StringName value){
         return(((TestAbstractExtendedDMO) core).hsStringNameContains(value));
     }
@@ -159,7 +159,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * @return A COPY of the collection of StringName objects.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:2052)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:2058)
     @SuppressWarnings("unchecked")
     public HashSet<StringName> getHsStringNameCopy(){
         DmcAttribute<?> attr = core.get(DmtDMSAG.__hsStringName);
@@ -180,7 +180,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
      * Deletes a hsStringName value.
      * @param value The StringName to be deleted from set of attribute values.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:2079)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:2085)
     public void delHsStringName(Object value) throws DmcValueException {
         ((TestAbstractExtendedDMO) core).delHsStringName(value);
     }
@@ -189,7 +189,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
      * Deletes a hsStringName value.
      * @param value The StringName to be deleted from set of attribute values.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:2088)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:2094)
     public void delHsStringName(StringName value){
         ((TestAbstractExtendedDMO) core).delHsStringName(value);
     }
@@ -197,7 +197,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * Removes the hsStringName attribute value.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:2100)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:2106)
     public void remHsStringName(){
         ((TestAbstractExtendedDMO) core).remHsStringName();
     }
@@ -205,7 +205,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * @return The number of IntegerToStringDMO items.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2152)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2158)
     public int getIntToStringMAPSize(){
         DmcAttribute<?> attr = ((TestAbstractExtendedDMO) core).get(DmtDMSAG.__intToStringMAP);
         if (attr == null)
@@ -217,7 +217,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * @return true if there are no IntegerToStringDMO items.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2164)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2170)
     public boolean getIntToStringMAPIsEmpty(){
         DmcAttribute<?> attr = ((TestAbstractExtendedDMO) core).get(DmtDMSAG.__intToStringMAP);
         if (attr == null)
@@ -229,7 +229,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * @return true if there are any IntegerToStringDMO items.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2176)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2182)
     public boolean getIntToStringMAPHasValue(){
         DmcAttribute<?> attr = ((TestAbstractExtendedDMO) core).get(DmtDMSAG.__intToStringMAP);
         if (attr == null)
@@ -241,7 +241,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * @return The keyed IntegerToString object if it's available and null otherwise.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2205)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2211)
     public IntegerToString getIntToStringMAP(Object key){
         return(((TestAbstractExtendedDMO) core).getIntToStringMAP(key));
     }
@@ -249,7 +249,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * @return the first key of the map.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2223)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2229)
     public Integer getIntToStringMAPFirstKey(){
         return(((TestAbstractExtendedDMO) core).getIntToStringMAPFirstKey());
     }
@@ -257,7 +257,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * @return An Iterator of IntegerToString objects.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2391)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2397)
     public Iterator<IntegerToString> getIntToStringMAP(){
         return(((TestAbstractExtendedDMO) core).getIntToStringMAP());
     }
@@ -266,7 +266,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
      * Adds another intToStringMAP value.
      * @param value A value compatible with IntegerToString
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2404)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2410)
     public void addIntToStringMAP(Object value) throws DmcValueException {
         ((TestAbstractExtendedDMO) core).addIntToStringMAP(value);
     }
@@ -275,7 +275,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
      * Adds another intToStringMAP value.
      * @param value IntegerToString
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2413)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2419)
     public void addIntToStringMAP(IntegerToString value) {
         ((TestAbstractExtendedDMO) core).addIntToStringMAP(value);
     }
@@ -284,7 +284,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
      * Deletes a intToStringMAP value.
      * @param value The IntegerToString to be deleted from set of attribute values.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2425)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2431)
     public void delIntToStringMAP(Object value){
         ((TestAbstractExtendedDMO) core).delIntToStringMAP(value);
     }
@@ -293,7 +293,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
      * Deletes a intToStringMAP value.
      * @param value The IntegerToString to be deleted from set of attribute values.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2434)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2440)
     public void delIntToStringMAP(Integer value){
         ((TestAbstractExtendedDMO) core).delIntToStringMAP(value);
     }
@@ -301,7 +301,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * Removes the intToStringMAP attribute value.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2503)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2509)
     public void remIntToStringMAP(){
         ((TestAbstractExtendedDMO) core).remIntToStringMAP();
     }
@@ -309,7 +309,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * @return The number of SomeRelation items.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1483)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1489)
     public int getSomeRelationMVISize(){
         return(((TestAbstractExtendedDMO) core).getSomeRelationMVISize());
     }
@@ -317,7 +317,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * @return true if there are no SomeRelationDMO items.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1491)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1497)
     public boolean getSomeRelationMVIIsEmpty(){
         if (((TestAbstractExtendedDMO) core).getSomeRelationMVISize() == 0)
             return(true);
@@ -327,7 +327,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * @return true if there are any SomeRelationDMO items.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1501)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1507)
     public boolean getSomeRelationMVIHasValue(){
         if (((TestAbstractExtendedDMO) core).getSomeRelationMVISize() == 0)
             return(false);
@@ -338,7 +338,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
      * Sets the someRelationMVI value at the specified index.
      * @param value A value compatible with SomeRelation
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1756)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1762)
     public DmcAttribute<?> setNthSomeRelationMVI(int index, SomeRelation value){
         return(((TestAbstractExtendedDMO) core).setNthSomeRelationMVI(index, value));
     }
@@ -346,7 +346,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * @return The reference to the SomeRelation object at the specified index.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1855)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1861)
     public SomeRelation getNthSomeRelationMVI(int index){
         return(((TestAbstractExtendedDMO) core).getNthSomeRelationMVI(index));
     }
@@ -354,7 +354,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * @return The reference to the SomeRelation object at the specified index.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1889)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1895)
     public SomeRelation getNthSomeRelationMVIREF(int index){
         return(((TestAbstractExtendedDMO) core).getNthSomeRelationMVIREF(index));
     }
@@ -362,7 +362,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * Removes the someRelationMVI attribute value.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:2100)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:2106)
     public void remSomeRelationMVI(){
         ((TestAbstractExtendedDMO) core).remSomeRelationMVI();
     }
@@ -370,7 +370,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * @return A reference to a SomeRelation object.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1262)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1268)
     public SomeRelation getSomeRelationSV(){
         SomeRelation ref = ((TestAbstractExtendedDMO) core).getSomeRelationSV();
         if (ref == null)
@@ -383,7 +383,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
      * Sets the someRelationSV to the specified value.
      * @param value A value compatible with SomeRelation
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1352)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1358)
     public void setSomeRelationSV(SomeRelation value) {
         ((TestAbstractExtendedDMO) core).setSomeRelationSV(value);
     }
@@ -392,7 +392,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
      * Sets the someRelationSV to the specified value.
      * @param value A value compatible with SomeRelation
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1372)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1378)
     public void setSomeRelationSV(Object value) throws DmcValueException {
         ((TestAbstractExtendedDMO) core).setSomeRelationSV(value);
     }
@@ -400,12 +400,12 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * Removes the someRelationSV attribute value.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1431)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1437)
     public void remSomeRelationSV(){
         ((TestAbstractExtendedDMO) core).remSomeRelationSV();
     }
 
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1286)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1292)
     public String getSvString(){
         return(((TestAbstractExtendedDMO) core).getSvString());
     }
@@ -414,7 +414,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
      * Sets svString to the specified value.
      * @param value A value compatible with DmcTypeString
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1396)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1402)
     public void setSvString(Object value) throws DmcValueException {
         ((TestAbstractExtendedDMO) core).setSvString(value);
     }
@@ -423,7 +423,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
      * Sets svString to the specified value.
      * @param value String
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1405)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1411)
     public void setSvString(String value){
         ((TestAbstractExtendedDMO) core).setSvString(value);
     }
@@ -431,7 +431,7 @@ abstract public class TestAbstractExtendedGXT extends GxtWrapper {
     /**
      * Removes the svString attribute value.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1431)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1437)
     public void remSvString(){
         ((TestAbstractExtendedDMO) core).remSvString();
     }

@@ -1,17 +1,18 @@
 package org.dmd.dmt.client.generated;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
-// Called from: org.dmd.mvw.gxt.dmw.generators.GxtDMWGenerator.createAutoWrapperNEW(GxtDMWGenerator.java:211)
-import org.dmd.dmc.DmcObject;                                  // The object we wrap - (GxtDMWGenerator.java:252)
-import org.dmd.dmt.client.generated.gxt.*;                     // Access to the wrappers for the dmt schema - (GxtDMWGenerator.java:310)
-import org.dmd.dmt.shared.generated.dmo.*;                     // Access to the DMOs for the dmt schema - (GxtDMWGenerator.java:311)
-import org.dmd.mvw.client.gxt.dmw.GxtWrapper;                  // The wrapper we return - (GxtDMWGenerator.java:253)
-import org.dmd.mvw.client.gxt.dmw.GxtWrapperFactoryIF;         // The standard wrapper util interface - (GxtDMWGenerator.java:254)
+// Called from: org.dmd.mvw.gxt.dmw.generators.GxtDMWGenerator.createAutoWrapperNEW(GxtDMWGenerator.java:215)
+import org.dmd.dmc.DmcObject;                                  // The object we wrap - (GxtDMWGenerator.java:256)
+import org.dmd.dmt.client.generated.gxt.*;                     // Access to the wrappers for the dmt schema - (GxtDMWGenerator.java:314)
+import org.dmd.dmt.shared.generated.dmo.*;                     // Access to the DMOs for the dmt schema - (GxtDMWGenerator.java:315)
+import org.dmd.mvw.client.gxt.dmw.GxtWrapper;                  // The wrapper we return - (GxtDMWGenerator.java:257)
+import org.dmd.mvw.client.gxt.dmw.GxtWrapperFactoryIF;         // The standard wrapper util interface - (GxtDMWGenerator.java:258)
 
-// Generated from: org.dmd.mvw.gxt.dmw.generators.GxtDMWGenerator.createAutoWrapperNEW(GxtDMWGenerator.java:214)
+// Generated from: org.dmd.mvw.gxt.dmw.generators.GxtDMWGenerator.createAutoWrapperNEW(GxtDMWGenerator.java:218)
 public class DmtGxtWrapperFactory implements GxtWrapperFactoryIF {
 
     static final int ClientCountFilterID = 10017;
+    static final int ComplexTypeTestID = 10409;
     static final int ExtendedRefHSID = 10406;
     static final int ExtendedRefMVID = 10402;
     static final int ExtendedRefMVIDXID = 10403;
@@ -27,6 +28,7 @@ public class DmtGxtWrapperFactory implements GxtWrapperFactoryIF {
     static final int NamedObjTMID = 10205;
     static final int NamedObjTSID = 10207;
     static final int ObjWithRefsID = 10016;
+    static final int ParseTestID = 10408;
     static final int PrimitiveHMID = 10104;
     static final int PrimitiveHSID = 10106;
     static final int PrimitiveMVID = 10102;
@@ -73,6 +75,9 @@ public class DmtGxtWrapperFactory implements GxtWrapperFactoryIF {
         case ClientCountFilterID:
             rc = new ClientCountFilterGXT((ClientCountFilterDMO)obj);
             break;
+        case ComplexTypeTestID:
+            rc = new ComplexTypeTestGXT((ComplexTypeTestDMO)obj);
+            break;
         case ExtendedRefHSID:
             rc = new ExtendedRefHSGXT((ExtendedRefHSDMO)obj);
             break;
@@ -117,6 +122,9 @@ public class DmtGxtWrapperFactory implements GxtWrapperFactoryIF {
             break;
         case ObjWithRefsID:
             rc = new ObjWithRefsGXT((ObjWithRefsDMO)obj);
+            break;
+        case ParseTestID:
+            rc = new ParseTestGXT((ParseTestDMO)obj);
             break;
         case PrimitiveHMID:
             rc = new PrimitiveHMGXT((PrimitiveHMDMO)obj);

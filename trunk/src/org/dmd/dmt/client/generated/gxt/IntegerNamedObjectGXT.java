@@ -2,12 +2,12 @@ package org.dmd.dmt.client.generated.gxt;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.dmg.generators.BaseDMWGeneratorNewest.dumpWrapper(BaseDMWGeneratorNewest.java:349)
-import org.dmd.dmc.*;                                                  // If any attributes - (BaseDMWGeneratorNewest.java:903)
+import org.dmd.dmc.*;                                                  // If any attributes - (BaseDMWGeneratorNewest.java:905)
 import org.dmd.dmc.types.IntegerName;                                  // Is named by - (BaseDMWGeneratorNewest.java:884)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                            // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:892)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;                  // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:891)
-import org.dmd.dmt.shared.generated.dmo.IntegerNamedObjectDMO;         // Class not auxiliary or abstract - (BaseDMWGeneratorNewest.java:1068)
-import org.dmd.mvw.client.gxt.dmw.GxtNamedObjectWrapper;               // Named object wrapper - (BaseDMWGeneratorNewest.java:1058)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                            // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:894)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;                  // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:893)
+import org.dmd.dmt.shared.generated.dmo.IntegerNamedObjectDMO;         // Class not auxiliary or abstract - (BaseDMWGeneratorNewest.java:1070)
+import org.dmd.mvw.client.gxt.dmw.GxtNamedObjectWrapper;               // Named object wrapper - (BaseDMWGeneratorNewest.java:1060)
 
 
 /**
@@ -47,7 +47,7 @@ public class IntegerNamedObjectGXT extends GxtNamedObjectWrapper implements DmcN
         super(obj);
     }
 
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.getAccessFunctions(BaseDMWGeneratorNewest.java:1113)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.getAccessFunctions(BaseDMWGeneratorNewest.java:1115)
     public IntegerName getObjectName(){
         return(((IntegerNamedObjectDMO) core).getIntegerName());
     }
@@ -67,7 +67,7 @@ public class IntegerNamedObjectGXT extends GxtNamedObjectWrapper implements DmcN
         return(false);
     }
 
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1286)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1292)
     public IntegerName getIntegerName(){
         return(((IntegerNamedObjectDMO) core).getIntegerName());
     }
@@ -76,7 +76,7 @@ public class IntegerNamedObjectGXT extends GxtNamedObjectWrapper implements DmcN
      * Sets integerName to the specified value.
      * @param value A value compatible with DmcTypeIntegerName
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1396)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1402)
     public void setIntegerName(Object value) throws DmcValueException {
         ((IntegerNamedObjectDMO) core).setIntegerName(value);
     }
@@ -85,7 +85,7 @@ public class IntegerNamedObjectGXT extends GxtNamedObjectWrapper implements DmcN
      * Sets integerName to the specified value.
      * @param value IntegerName
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1405)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1411)
     public void setIntegerName(IntegerName value){
         ((IntegerNamedObjectDMO) core).setIntegerName(value);
     }
@@ -93,12 +93,12 @@ public class IntegerNamedObjectGXT extends GxtNamedObjectWrapper implements DmcN
     /**
      * Removes the integerName attribute value.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1431)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1437)
     public void remIntegerName(){
         ((IntegerNamedObjectDMO) core).remIntegerName();
     }
 
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1286)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1292)
     public String getSvString(){
         return(((IntegerNamedObjectDMO) core).getSvString());
     }
@@ -107,7 +107,7 @@ public class IntegerNamedObjectGXT extends GxtNamedObjectWrapper implements DmcN
      * Sets svString to the specified value.
      * @param value A value compatible with DmcTypeString
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1396)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1402)
     public void setSvString(Object value) throws DmcValueException {
         ((IntegerNamedObjectDMO) core).setSvString(value);
     }
@@ -116,7 +116,7 @@ public class IntegerNamedObjectGXT extends GxtNamedObjectWrapper implements DmcN
      * Sets svString to the specified value.
      * @param value String
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1405)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1411)
     public void setSvString(String value){
         ((IntegerNamedObjectDMO) core).setSvString(value);
     }
@@ -124,7 +124,7 @@ public class IntegerNamedObjectGXT extends GxtNamedObjectWrapper implements DmcN
     /**
      * Removes the svString attribute value.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1431)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1437)
     public void remSvString(){
         ((IntegerNamedObjectDMO) core).remSvString();
     }

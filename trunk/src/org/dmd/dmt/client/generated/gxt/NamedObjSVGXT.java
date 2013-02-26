@@ -2,13 +2,13 @@ package org.dmd.dmt.client.generated.gxt;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.dmg.generators.BaseDMWGeneratorNewest.dumpWrapper(BaseDMWGeneratorNewest.java:349)
-import org.dmd.dmc.*;                                             // If any attributes - (BaseDMWGeneratorNewest.java:903)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                       // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:892)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;             // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:891)
-import org.dmd.dmt.shared.generated.dmo.NamedObjSVDMO;            // Class not auxiliary or abstract - (BaseDMWGeneratorNewest.java:1068)
-import org.dmd.dmt.shared.generated.dmo.ObjWithRefsDMO;           // DMO reference - (BaseDMWGeneratorNewest.java:958)
-import org.dmd.dmt.shared.generated.types.ObjWithRefsREF;         // Is reference type REF - (BaseDMWGeneratorNewest.java:953)
-import org.dmd.mvw.client.gxt.dmw.GxtWrapper;                     // Unnamed object wrapper - (BaseDMWGeneratorNewest.java:1051)
+import org.dmd.dmc.*;                                             // If any attributes - (BaseDMWGeneratorNewest.java:905)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                       // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:894)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;             // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:893)
+import org.dmd.dmt.shared.generated.dmo.NamedObjSVDMO;            // Class not auxiliary or abstract - (BaseDMWGeneratorNewest.java:1070)
+import org.dmd.dmt.shared.generated.dmo.ObjWithRefsDMO;           // DMO reference - (BaseDMWGeneratorNewest.java:960)
+import org.dmd.dmt.shared.generated.types.ObjWithRefsREF;         // Is reference type REF - (BaseDMWGeneratorNewest.java:955)
+import org.dmd.mvw.client.gxt.dmw.GxtWrapper;                     // Unnamed object wrapper - (BaseDMWGeneratorNewest.java:1053)
 
 
 /**
@@ -49,7 +49,7 @@ public class NamedObjSVGXT extends GxtWrapper {
     /**
      * @return A reference to a ObjWithRefs object.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1262)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1268)
     public ObjWithRefsREF getSvNamedObj(){
         ObjWithRefsREF ref = ((NamedObjSVDMO) core).getSvNamedObj();
         if (ref == null)
@@ -62,7 +62,7 @@ public class NamedObjSVGXT extends GxtWrapper {
      * Sets the svNamedObj to the specified value.
      * @param value A value compatible with ObjWithRefsDMO
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1362)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1368)
     public void setSvNamedObj(ObjWithRefsDMO value) {
         ((NamedObjSVDMO) core).setSvNamedObj(value);
     }
@@ -71,7 +71,7 @@ public class NamedObjSVGXT extends GxtWrapper {
      * Sets the svNamedObj to the specified value.
      * @param value A value compatible with ObjWithRefs
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1372)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1378)
     public void setSvNamedObj(Object value) throws DmcValueException {
         ((NamedObjSVDMO) core).setSvNamedObj(value);
     }
@@ -79,7 +79,7 @@ public class NamedObjSVGXT extends GxtWrapper {
     /**
      * Removes the svNamedObj attribute value.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1431)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1437)
     public void remSvNamedObj(){
         ((NamedObjSVDMO) core).remSvNamedObj();
     }
