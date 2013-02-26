@@ -2,16 +2,16 @@ package org.dmd.dmt.client.generated.gxt;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.dmg.generators.BaseDMWGeneratorNewest.dumpWrapper(BaseDMWGeneratorNewest.java:349)
-import java.util.Iterator;                                        // Support MV object get() - (BaseDMWGeneratorNewest.java:2239)
-import org.dmd.dmc.*;                                             // If any attributes - (BaseDMWGeneratorNewest.java:903)
-import org.dmd.dmc.types.StringName;                              // Name type - (BaseDMWGeneratorNewest.java:2217)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                       // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:892)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;             // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:891)
+import java.util.Iterator;                                        // Support MV object get() - (BaseDMWGeneratorNewest.java:2245)
+import org.dmd.dmc.*;                                             // If any attributes - (BaseDMWGeneratorNewest.java:905)
+import org.dmd.dmc.types.StringName;                              // Name type - (BaseDMWGeneratorNewest.java:2223)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                       // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:894)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;             // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:893)
 import org.dmd.dmt.shared.generated.dmo.DmtDMSAG;                 // Attribute tmNamedObj from the dmt schema - (BaseDMWGeneratorNewest.java:723)
-import org.dmd.dmt.shared.generated.dmo.NamedObjTMDMO;            // Class not auxiliary or abstract - (BaseDMWGeneratorNewest.java:1068)
-import org.dmd.dmt.shared.generated.dmo.ObjWithRefsDMO;           // DMO reference - (BaseDMWGeneratorNewest.java:958)
-import org.dmd.dmt.shared.generated.types.ObjWithRefsREF;         // Helper class - (BaseDMWGeneratorNewest.java:961)
-import org.dmd.mvw.client.gxt.dmw.GxtWrapper;                     // Unnamed object wrapper - (BaseDMWGeneratorNewest.java:1051)
+import org.dmd.dmt.shared.generated.dmo.NamedObjTMDMO;            // Class not auxiliary or abstract - (BaseDMWGeneratorNewest.java:1070)
+import org.dmd.dmt.shared.generated.dmo.ObjWithRefsDMO;           // DMO reference - (BaseDMWGeneratorNewest.java:960)
+import org.dmd.dmt.shared.generated.types.ObjWithRefsREF;         // Helper class - (BaseDMWGeneratorNewest.java:963)
+import org.dmd.mvw.client.gxt.dmw.GxtWrapper;                     // Unnamed object wrapper - (BaseDMWGeneratorNewest.java:1053)
 
 
 /**
@@ -52,7 +52,7 @@ public class NamedObjTMGXT extends GxtWrapper {
     /**
      * @return The number of ObjWithRefsDMO items.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2152)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2158)
     public int getTmNamedObjSize(){
         DmcAttribute<?> attr = ((NamedObjTMDMO) core).get(DmtDMSAG.__tmNamedObj);
         if (attr == null)
@@ -64,7 +64,7 @@ public class NamedObjTMGXT extends GxtWrapper {
     /**
      * @return true if there are no ObjWithRefsDMO items.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2164)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2170)
     public boolean getTmNamedObjIsEmpty(){
         DmcAttribute<?> attr = ((NamedObjTMDMO) core).get(DmtDMSAG.__tmNamedObj);
         if (attr == null)
@@ -76,7 +76,7 @@ public class NamedObjTMGXT extends GxtWrapper {
     /**
      * @return true if there are any ObjWithRefsDMO items.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2176)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2182)
     public boolean getTmNamedObjHasValue(){
         DmcAttribute<?> attr = ((NamedObjTMDMO) core).get(DmtDMSAG.__tmNamedObj);
         if (attr == null)
@@ -88,7 +88,7 @@ public class NamedObjTMGXT extends GxtWrapper {
     /**
      * @return The keyed ObjWithRefs object if it's available and null otherwise.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2205)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2211)
     public ObjWithRefsREF getTmNamedObj(Object key){
         return(((NamedObjTMDMO) core).getTmNamedObj(key));
     }
@@ -96,7 +96,7 @@ public class NamedObjTMGXT extends GxtWrapper {
     /**
      * @return the first key of the map.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2223)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2229)
     public StringName getTmNamedObjFirstKey(){
         return(((NamedObjTMDMO) core).getTmNamedObjFirstKey());
     }
@@ -104,7 +104,7 @@ public class NamedObjTMGXT extends GxtWrapper {
     /**
      * @return An Iterator of ObjWithRefsREFs.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2265)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2271)
     public Iterator<ObjWithRefsREF> getTmNamedObj(){
         return(((NamedObjTMDMO) core).getTmNamedObj());
     }
@@ -113,7 +113,7 @@ public class NamedObjTMGXT extends GxtWrapper {
      * Adds another tmNamedObj value.
      * @param value ObjWithRefsGXT
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2291)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2297)
     public DmcAttribute<?> addTmNamedObj(ObjWithRefsDMO value) {
         return(((NamedObjTMDMO) core).addTmNamedObj(value));
     }
@@ -122,7 +122,7 @@ public class NamedObjTMGXT extends GxtWrapper {
      * Deletes a tmNamedObj value.
      * @param value The ObjWithRefs to be deleted from set of attribute values.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2315)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2321)
     public void delTmNamedObj(ObjWithRefsDMO value){
         ((NamedObjTMDMO) core).delTmNamedObj(value);
     }
@@ -130,7 +130,7 @@ public class NamedObjTMGXT extends GxtWrapper {
     /**
      * Removes the tmNamedObj attribute value.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2503)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMAPPED(BaseDMWGeneratorNewest.java:2509)
     public void remTmNamedObj(){
         ((NamedObjTMDMO) core).remTmNamedObj();
     }

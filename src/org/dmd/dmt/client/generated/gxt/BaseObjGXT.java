@@ -2,11 +2,11 @@ package org.dmd.dmt.client.generated.gxt;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.dmg.generators.BaseDMWGeneratorNewest.dumpWrapper(BaseDMWGeneratorNewest.java:349)
-import java.util.Date;                                           // Primitive type - (BaseDMWGeneratorNewest.java:966)
-import org.dmd.dmc.*;                                            // If any attributes - (BaseDMWGeneratorNewest.java:903)
+import java.util.Date;                                           // Primitive type - (BaseDMWGeneratorNewest.java:968)
+import org.dmd.dmc.*;                                            // If any attributes - (BaseDMWGeneratorNewest.java:905)
 import org.dmd.dmc.types.StringName;                             // Is named by - (BaseDMWGeneratorNewest.java:884)
-import org.dmd.dmt.shared.generated.dmo.BaseObjDMO;              // Abstract class - (BaseDMWGeneratorNewest.java:1046)
-import org.dmd.mvw.client.gxt.dmw.GxtNamedObjectWrapper;         // Named object wrapper - (BaseDMWGeneratorNewest.java:1058)
+import org.dmd.dmt.shared.generated.dmo.BaseObjDMO;              // Abstract class - (BaseDMWGeneratorNewest.java:1048)
+import org.dmd.mvw.client.gxt.dmw.GxtNamedObjectWrapper;         // Named object wrapper - (BaseDMWGeneratorNewest.java:1060)
 
 
 /**
@@ -34,7 +34,7 @@ abstract public class BaseObjGXT extends GxtNamedObjectWrapper implements DmcNam
         super(obj);
     }
 
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.getAccessFunctions(BaseDMWGeneratorNewest.java:1113)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.getAccessFunctions(BaseDMWGeneratorNewest.java:1115)
     public StringName getObjectName(){
         return(((BaseObjDMO) core).getName());
     }
@@ -54,7 +54,7 @@ abstract public class BaseObjGXT extends GxtNamedObjectWrapper implements DmcNam
         return(false);
     }
 
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1286)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1292)
     public StringName getName(){
         return(((BaseObjDMO) core).getName());
     }
@@ -63,7 +63,7 @@ abstract public class BaseObjGXT extends GxtNamedObjectWrapper implements DmcNam
      * Sets name to the specified value.
      * @param value A value compatible with DmcTypeStringName
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1396)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1402)
     public void setName(Object value) throws DmcValueException {
         ((BaseObjDMO) core).setName(value);
     }
@@ -72,7 +72,7 @@ abstract public class BaseObjGXT extends GxtNamedObjectWrapper implements DmcNam
      * Sets name to the specified value.
      * @param value StringName
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1405)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1411)
     public void setName(StringName value){
         ((BaseObjDMO) core).setName(value);
     }
@@ -80,12 +80,12 @@ abstract public class BaseObjGXT extends GxtNamedObjectWrapper implements DmcNam
     /**
      * Removes the name attribute value.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1431)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1437)
     public void remName(){
         ((BaseObjDMO) core).remName();
     }
 
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1286)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1292)
     public Date getSvDate(){
         return(((BaseObjDMO) core).getSvDate());
     }
@@ -94,7 +94,7 @@ abstract public class BaseObjGXT extends GxtNamedObjectWrapper implements DmcNam
      * Sets svDate to the specified value.
      * @param value A value compatible with DmcTypeDate
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1396)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1402)
     public void setSvDate(Object value) throws DmcValueException {
         ((BaseObjDMO) core).setSvDate(value);
     }
@@ -103,7 +103,7 @@ abstract public class BaseObjGXT extends GxtNamedObjectWrapper implements DmcNam
      * Sets svDate to the specified value.
      * @param value Date
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1405)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1411)
     public void setSvDate(Date value){
         ((BaseObjDMO) core).setSvDate(value);
     }
@@ -111,7 +111,7 @@ abstract public class BaseObjGXT extends GxtNamedObjectWrapper implements DmcNam
     /**
      * Removes the svDate attribute value.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1431)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1437)
     public void remSvDate(){
         ((BaseObjDMO) core).remSvDate();
     }

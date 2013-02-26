@@ -2,13 +2,13 @@ package org.dmd.dmt.client.generated.gxt;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.dmg.generators.BaseDMWGeneratorNewest.dumpWrapper(BaseDMWGeneratorNewest.java:349)
-import java.util.Iterator;                                               // Multi-valued attribute access - (BaseDMWGeneratorNewest.java:1539)
-import org.dmd.dmc.*;                                                    // If any attributes - (BaseDMWGeneratorNewest.java:903)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                              // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:892)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;                    // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:891)
-import org.dmd.dmt.shared.generated.dmo.TestBasicObjectFixedDMO;         // DMO reference - (BaseDMWGeneratorNewest.java:958)
-import org.dmd.dmt.shared.generated.dmo.UnnamedObjHSDMO;                 // Class not auxiliary or abstract - (BaseDMWGeneratorNewest.java:1068)
-import org.dmd.mvw.client.gxt.dmw.GxtWrapper;                            // Unnamed object wrapper - (BaseDMWGeneratorNewest.java:1051)
+import java.util.Iterator;                                               // Multi-valued attribute access - (BaseDMWGeneratorNewest.java:1545)
+import org.dmd.dmc.*;                                                    // If any attributes - (BaseDMWGeneratorNewest.java:905)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                              // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:894)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;                    // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:893)
+import org.dmd.dmt.shared.generated.dmo.TestBasicObjectFixedDMO;         // DMO reference - (BaseDMWGeneratorNewest.java:960)
+import org.dmd.dmt.shared.generated.dmo.UnnamedObjHSDMO;                 // Class not auxiliary or abstract - (BaseDMWGeneratorNewest.java:1070)
+import org.dmd.mvw.client.gxt.dmw.GxtWrapper;                            // Unnamed object wrapper - (BaseDMWGeneratorNewest.java:1053)
 
 
 /**
@@ -49,7 +49,7 @@ public class UnnamedObjHSGXT extends GxtWrapper {
     /**
      * @return The number of TestBasicObjectFixed items.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1483)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1489)
     public int getHsUnnamedObjSize(){
         return(((UnnamedObjHSDMO) core).getHsUnnamedObjSize());
     }
@@ -57,7 +57,7 @@ public class UnnamedObjHSGXT extends GxtWrapper {
     /**
      * @return true if there are no TestBasicObjectFixedDMO items.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1491)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1497)
     public boolean getHsUnnamedObjIsEmpty(){
         if (((UnnamedObjHSDMO) core).getHsUnnamedObjSize() == 0)
             return(true);
@@ -67,7 +67,7 @@ public class UnnamedObjHSGXT extends GxtWrapper {
     /**
      * @return true if there are any TestBasicObjectFixedDMO items.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1501)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1507)
     public boolean getHsUnnamedObjHasValue(){
         if (((UnnamedObjHSDMO) core).getHsUnnamedObjSize() == 0)
             return(false);
@@ -77,7 +77,7 @@ public class UnnamedObjHSGXT extends GxtWrapper {
     /**
      * @return An Iterator of TestBasicObjectFixedDMO objects.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1544)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1550)
     public Iterator<TestBasicObjectFixedDMO> getHsUnnamedObj(){
         return(((UnnamedObjHSDMO) core).getHsUnnamedObj());
     }
@@ -86,7 +86,7 @@ public class UnnamedObjHSGXT extends GxtWrapper {
      * Adds another hsUnnamedObj value.
      * @param value A value compatible with TestBasicObjectFixedDMO
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1609)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1615)
     public DmcAttribute<?> addHsUnnamedObj(TestBasicObjectFixedDMO value){
         return(((UnnamedObjHSDMO) core).addHsUnnamedObj(value));
     }
@@ -95,7 +95,7 @@ public class UnnamedObjHSGXT extends GxtWrapper {
      * Deletes a hsUnnamedObj value.
      * @param value The TestBasicObjectFixed to be deleted from set of attribute values.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1657)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:1663)
     public void delHsUnnamedObj(TestBasicObjectFixedDMO value){
         ((UnnamedObjHSDMO) core).delHsUnnamedObj(value);
     }
@@ -103,7 +103,7 @@ public class UnnamedObjHSGXT extends GxtWrapper {
     /**
      * Removes the hsUnnamedObj attribute value.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:2100)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatMV(BaseDMWGeneratorNewest.java:2106)
     public void remHsUnnamedObj(){
         ((UnnamedObjHSDMO) core).remHsUnnamedObj();
     }

@@ -2,12 +2,12 @@ package org.dmd.dmt.client.generated.gxt;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
 // Called from: org.dmd.dmg.generators.BaseDMWGeneratorNewest.dumpWrapper(BaseDMWGeneratorNewest.java:349)
-import org.dmd.dmc.*;                                                    // If any attributes - (BaseDMWGeneratorNewest.java:903)
-import org.dmd.dms.generated.dmo.MetaDMSAG;                              // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:892)
-import org.dmd.dms.generated.types.DmcTypeModifierMV;                    // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:891)
-import org.dmd.dmt.shared.generated.dmo.TestBasicObjectFixedDMO;         // Reference to unnamed object - (BaseDMWGeneratorNewest.java:950)
-import org.dmd.dmt.shared.generated.dmo.UnnamedObjSVDMO;                 // Class not auxiliary or abstract - (BaseDMWGeneratorNewest.java:1068)
-import org.dmd.mvw.client.gxt.dmw.GxtWrapper;                            // Unnamed object wrapper - (BaseDMWGeneratorNewest.java:1051)
+import org.dmd.dmc.*;                                                    // If any attributes - (BaseDMWGeneratorNewest.java:905)
+import org.dmd.dms.generated.dmo.MetaDMSAG;                              // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:894)
+import org.dmd.dms.generated.types.DmcTypeModifierMV;                    // Required for MODREC constructor - (BaseDMWGeneratorNewest.java:893)
+import org.dmd.dmt.shared.generated.dmo.TestBasicObjectFixedDMO;         // Reference to unnamed object - (BaseDMWGeneratorNewest.java:952)
+import org.dmd.dmt.shared.generated.dmo.UnnamedObjSVDMO;                 // Class not auxiliary or abstract - (BaseDMWGeneratorNewest.java:1070)
+import org.dmd.mvw.client.gxt.dmw.GxtWrapper;                            // Unnamed object wrapper - (BaseDMWGeneratorNewest.java:1053)
 
 
 /**
@@ -48,7 +48,7 @@ public class UnnamedObjSVGXT extends GxtWrapper {
     /**
      * @return A TestBasicObjectFixedGXT object.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1217)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1219)
     public TestBasicObjectFixedGXT getSvUnnamedObj(){
         TestBasicObjectFixedDMO dmo = ((UnnamedObjSVDMO) core).getSvUnnamedObj();
         if (dmo == null)
@@ -61,7 +61,7 @@ public class UnnamedObjSVGXT extends GxtWrapper {
      * Sets the svUnnamedObj to the specified value.
      * @param value A value compatible with TestBasicObjectFixedDMO
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1362)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1368)
     public void setSvUnnamedObj(TestBasicObjectFixedDMO value) {
         ((UnnamedObjSVDMO) core).setSvUnnamedObj(value);
     }
@@ -70,7 +70,7 @@ public class UnnamedObjSVGXT extends GxtWrapper {
      * Sets the svUnnamedObj to the specified value.
      * @param value A value compatible with TestBasicObjectFixed
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1372)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1378)
     public void setSvUnnamedObj(Object value) throws DmcValueException {
         ((UnnamedObjSVDMO) core).setSvUnnamedObj(value);
     }
@@ -78,7 +78,7 @@ public class UnnamedObjSVGXT extends GxtWrapper {
     /**
      * Removes the svUnnamedObj attribute value.
      */
-    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1431)
+    // org.dmd.dmg.generators.BaseDMWGeneratorNewest.formatSV(BaseDMWGeneratorNewest.java:1437)
     public void remSvUnnamedObj(){
         ((UnnamedObjSVDMO) core).remSvUnnamedObj();
     }
