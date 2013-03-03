@@ -1,14 +1,14 @@
 package org.dmd.dmt.client.generated;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
-// Called from: org.dmd.mvw.gxt.dmw.generators.GxtDMWGenerator.createAutoWrapperNEW(GxtDMWGenerator.java:215)
-import org.dmd.dmc.DmcObject;                                  // The object we wrap - (GxtDMWGenerator.java:256)
-import org.dmd.dmt.client.generated.gxt.*;                     // Access to the wrappers for the dmt schema - (GxtDMWGenerator.java:314)
-import org.dmd.dmt.shared.generated.dmo.*;                     // Access to the DMOs for the dmt schema - (GxtDMWGenerator.java:315)
-import org.dmd.mvw.client.gxt.dmw.GxtWrapper;                  // The wrapper we return - (GxtDMWGenerator.java:257)
-import org.dmd.mvw.client.gxt.dmw.GxtWrapperFactoryIF;         // The standard wrapper util interface - (GxtDMWGenerator.java:258)
+// Called from: org.dmd.mvw.gxt.dmw.generators.GxtDMWGenerator.createAutoWrapperNEW(GxtDMWGenerator.java:214)
+import org.dmd.dmc.DmcObject;                                  // The object we wrap - (GxtDMWGenerator.java:255)
+import org.dmd.dmt.client.generated.gxt.*;                     // Access to the wrappers for the dmt schema - (GxtDMWGenerator.java:313)
+import org.dmd.dmt.shared.generated.dmo.*;                     // Access to the DMOs for the dmt schema - (GxtDMWGenerator.java:314)
+import org.dmd.mvw.client.gxt.dmw.GxtWrapper;                  // The wrapper we return - (GxtDMWGenerator.java:256)
+import org.dmd.mvw.client.gxt.dmw.GxtWrapperFactoryIF;         // The standard wrapper util interface - (GxtDMWGenerator.java:257)
 
-// Generated from: org.dmd.mvw.gxt.dmw.generators.GxtDMWGenerator.createAutoWrapperNEW(GxtDMWGenerator.java:218)
+// Generated from: org.dmd.mvw.gxt.dmw.generators.GxtDMWGenerator.createAutoWrapperNEW(GxtDMWGenerator.java:217)
 public class DmtGxtWrapperFactory implements GxtWrapperFactoryIF {
 
     static final int ClientCountFilterID = 10017;
