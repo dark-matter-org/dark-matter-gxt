@@ -171,17 +171,21 @@ public class GxtDMWGenerator extends BaseDMWGeneratorNewest {
 		out.write("    @Override\n");
 		out.write("    public <X> X set(String property, X value) {\n");
 		out.write("        DmcAttributeInfo ai = core.getAttributeInfo(property);\n");
-		out.write("			\n");
-		out.write("			if (ai == null)\n");
-		out.write("				throw(new IllegalStateException(\"Unknown attribute: \" + property + \" for class: \" + core.getConstructionClassName()));\n");
 		out.write("\n");
-		out.write("			if (ai.valueType != ValueTypeEnum.SINGLE)\n");
-		out.write("				throw(new IllegalStateException(\"The set() method only supports single-valued attributes. This attribute is multi-valued: \" + property));\n");
+		out.write("        if (ai == null)\n");
+		out.write("            throw(new IllegalStateException(\"Unknown attribute: \" + property + \" for class: \" + core.getConstructionClassName()));\n");
 		out.write("\n");
-		out.write("			X oldValue = get(property);\n");
-		out.write("			\n");
-		out.write("			try {\n");
-		out.write("				switch(ai.id){\n");
+		out.write("        if (ai.valueType != ValueTypeEnum.SINGLE)\n");
+		out.write("            throw(new IllegalStateException(\"The set() method only supports single-valued attributes. This attribute is multi-valued: \" + property));\n");
+		out.write("\n");
+		
+		// The following cast and suppression is required because of java compiler problems as described here:
+		// http://stackoverflow.com/questions/5666027/why-does-the-compiler-state-no-unique-maximal-instance-exists
+		out.write("         @SuppressWarnings(\"unchecked\")\n");
+		out.write("         X oldValue = (X) get(property);\n");
+		out.write("\n");
+		out.write("         try {\n");
+		out.write("             switch(ai.id){\n");
 		
 		out.write("\n");
 		
@@ -189,22 +193,22 @@ public class GxtDMWGenerator extends BaseDMWGeneratorNewest {
 		for(AttributeDefinition ad: attributes.values()){
 			if (ad.getValueType() == ValueTypeEnum.SINGLE){
 				String capped = GenUtility.capTheName(ad.getName().getNameString());
-				out.write("				case " + ad.getName() + "ID:\n");
-				out.write("				    ((" + cd.getName() + "DMO) core).set" + capped + "(value);\n");
-				out.write("				    break;\n");
+				out.write("             case " + ad.getName() + "ID:\n");
+				out.write("                 ((" + cd.getName() + "DMO) core).set" + capped + "(value);\n");
+				out.write("                 break;\n");
 			}
 		}
 		out.write("\n");
 		
 		
-		out.write("			    }\n");
-		out.write("	        } catch (DmcValueException e) {\n");
-		out.write("		        throw(new IllegalStateException(e));\n");
-		out.write("	        }\n");
+		out.write("             }\n");
+		out.write("        } catch (DmcValueException e) {\n");
+		out.write("             throw(new IllegalStateException(e));\n");
+		out.write("        }\n");
 		out.write("\n");
-		out.write("			notifyPropertyChanged(property, value, oldValue);\n");
-		out.write("			return(oldValue);\n");
-		out.write("		}\n");
+		out.write("        notifyPropertyChanged(property, value, oldValue);\n");
+		out.write("        return(oldValue);\n");
+		out.write("    }\n");
 		
 	}
 	
