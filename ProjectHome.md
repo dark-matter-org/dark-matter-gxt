@@ -1,0 +1,1 @@
+The dark-matter-gxt project builds on top of dark-matter-mvw to allow for the seamless use of Sencha's GXT components.
