@@ -2,13 +2,14 @@ package org.dmd.mvw.client.gxt.store;
 
 import org.dmd.mvw.client.gxt.dmw.GxtWrapper;
 
-import com.extjs.gxt.ui.client.store.ListStore;
+//import com.extjs.gxt.ui.client.store.ListStore;
 
 /**
  * The GxtListStore extends the basic GXT ListStore and stores a set of GxtWrapped
  * Dark Matter Objects.
  */
-public class GxtListStore<E extends GxtWrapper> extends ListStore<E>{
+//public class GxtListStore<E extends GxtWrapper> extends ListStore<E>{
+public class GxtListStore<E extends GxtWrapper> {
 
 	/**
 	 * Constructs a new GxtListStore.
@@ -17,3 +18,4 @@ public class GxtListStore<E extends GxtWrapper> extends ListStore<E>{
 	}
 	
 }
+

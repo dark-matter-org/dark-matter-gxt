@@ -2,15 +2,16 @@ package org.dmd.mvw.client.gxtforms.widgets;
 
 import org.dmd.mvw.client.gxtforms.implementation.GxtEnumValue;
 
-import com.extjs.gxt.ui.client.widget.form.CheckBox;
+//import com.extjs.gxt.ui.client.widget.form.CheckBox;
 
-public class CheckEnumValue extends CheckBox {
+//public class CheckEnumValue extends CheckBox {
+public class CheckEnumValue {
 
 	GxtEnumValue	enumValue;
 	
 	public CheckEnumValue(GxtEnumValue ev){
 		enumValue = ev;
-		setBoxLabel(enumValue.getLabel());
+//		setBoxLabel(enumValue.getLabel());
 	}
 
 	public GxtEnumValue getEnumValue(){

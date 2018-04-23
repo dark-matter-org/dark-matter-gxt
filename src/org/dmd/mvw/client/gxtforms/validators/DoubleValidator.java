@@ -1,7 +1,12 @@
 package org.dmd.mvw.client.gxtforms.validators;
 
-import com.extjs.gxt.ui.client.widget.form.Field;
-import com.extjs.gxt.ui.client.widget.form.Validator;
+import java.util.List;
+
+import com.google.gwt.editor.client.Editor;
+import com.sencha.gxt.widget.core.client.form.Validator;
+
+//import com.extjs.gxt.ui.client.widget.form.Field;
+//import com.extjs.gxt.ui.client.widget.form.Validator;
 
 public class DoubleValidator implements Validator {
 
@@ -39,45 +44,51 @@ public class DoubleValidator implements Validator {
 		integerLimited = true;
 		afterDecimal 	= ad;
 	}
-	
-	
+
 	@Override
-	public String validate(Field<?> field, String value) {
-		if (value == null)
-			return(null);
-		
-		try{
-			double fv = Double.parseDouble(value);
-			
-			if (range){
-				if ((fv < start) || (fv > end))
-					return("Value must be in the range " + start + " to " + end);
-			}
-
-			if (integerLimited){
-				int iv = (int) fv;
-				double fv2 = iv;
-				if (fv > fv2)
-					return("Value must be integer compatible");
-			}
-			
-			int decimalpos = value.indexOf(".");
-			if (decimalpos != -1){
-				int diff = value.length() - decimalpos;
-				if (diff > (afterDecimal + 1) )
-					return("Only " + afterDecimal + " digits allowed after the decimal point.");
-			}
-
-//			if (!value.equals("" + fv)){
-//				return("This value cannot be accuratedly represented!");
-//			}
-		}
-		catch(NumberFormatException ex){
-			return("Double value expected");
-		}
-		
-
+	public List validate(Editor editor, Object value) {
+		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	
+//	@Override
+//	public String validate(Field<?> field, String value) {
+//		if (value == null)
+//			return(null);
+//		
+//		try{
+//			double fv = Double.parseDouble(value);
+//			
+//			if (range){
+//				if ((fv < start) || (fv > end))
+//					return("Value must be in the range " + start + " to " + end);
+//			}
+//
+//			if (integerLimited){
+//				int iv = (int) fv;
+//				double fv2 = iv;
+//				if (fv > fv2)
+//					return("Value must be integer compatible");
+//			}
+//			
+//			int decimalpos = value.indexOf(".");
+//			if (decimalpos != -1){
+//				int diff = value.length() - decimalpos;
+//				if (diff > (afterDecimal + 1) )
+//					return("Only " + afterDecimal + " digits allowed after the decimal point.");
+//			}
+//
+////			if (!value.equals("" + fv)){
+////				return("This value cannot be accuratedly represented!");
+////			}
+//		}
+//		catch(NumberFormatException ex){
+//			return("Double value expected");
+//		}
+//		
+//
+//		return null;
+//	}
 
 }

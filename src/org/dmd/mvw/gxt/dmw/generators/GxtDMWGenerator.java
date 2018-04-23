@@ -20,9 +20,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.TreeMap;
 
+import org.dmd.dmc.types.DefinitionName;
 import org.dmd.dmc.types.StringName;
 import org.dmd.dmg.generated.dmo.DmgConfigDMO;
-import org.dmd.dmg.generators.BaseDMWGeneratorNewest;
+import org.dmd.dmg.generators.BaseDMWGenerator;
 import org.dmd.dms.AttributeDefinition;
 import org.dmd.dms.ClassDefinition;
 import org.dmd.dms.SchemaDefinition;
@@ -33,12 +34,13 @@ import org.dmd.dms.generated.enums.WrapperTypeEnum;
 import org.dmd.dms.util.GenUtility;
 import org.dmd.util.FileUpdateManager;
 import org.dmd.util.codegen.ImportManager;
+import org.dmd.util.codegen.Manipulator;
 import org.dmd.util.exceptions.DebugInfo;
 import org.dmd.util.exceptions.ResultException;
 import org.dmd.util.parsing.ConfigFinder;
 import org.dmd.util.parsing.ConfigLocation;
 
-public class GxtDMWGenerator extends BaseDMWGeneratorNewest {
+public class GxtDMWGenerator extends BaseDMWGenerator {
 
 	// The set of all classes for which we want wrappers in this context
 	TreeMap<String,ClassDefinition>	allClasses;
@@ -90,7 +92,8 @@ public class GxtDMWGenerator extends BaseDMWGeneratorNewest {
 	
 	boolean needSetMethod(ClassDefinition cd){
 		boolean needIt = false;
-		TreeMap<StringName,AttributeDefinition> attributes = cd.getAllAttributesAtThisLevel();
+		
+		TreeMap<DefinitionName,AttributeDefinition> attributes = cd.getAllAttributesAtThisLevel();
 		for(AttributeDefinition ad: attributes.values()){
 			if (ad.getValueType() == ValueTypeEnum.SINGLE){
 				needIt = true;
@@ -135,7 +138,7 @@ public class GxtDMWGenerator extends BaseDMWGeneratorNewest {
 		if (!needSetMethod(cd))
 			return;
 
-		TreeMap<StringName,AttributeDefinition> attributes = cd.getAllAttributesAtThisLevel();
+		TreeMap<DefinitionName,AttributeDefinition> attributes = cd.getAllAttributesAtThisLevel();
 		
 		out.write("\n");
 		for(AttributeDefinition ad: attributes.values()){
@@ -168,47 +171,49 @@ public class GxtDMWGenerator extends BaseDMWGeneratorNewest {
 		// Need an additional hook to add required imports to the generated wrapper and also additional properties
 		// and static definitions.
 		
-		out.write("    @Override\n");
-		out.write("    public <X> X set(String property, X value) {\n");
-		out.write("        DmcAttributeInfo ai = core.getAttributeInfo(property);\n");
-		out.write("\n");
-		out.write("        if (ai == null)\n");
-		out.write("            throw(new IllegalStateException(\"Unknown attribute: \" + property + \" for class: \" + core.getConstructionClassName()));\n");
-		out.write("\n");
-		out.write("        if (ai.valueType != ValueTypeEnum.SINGLE)\n");
-		out.write("            throw(new IllegalStateException(\"The set() method only supports single-valued attributes. This attribute is multi-valued: \" + property));\n");
-		out.write("\n");
+		// TODO: replace this if neccessary
 		
-		// The following cast and suppression is required because of java compiler problems as described here:
-		// http://stackoverflow.com/questions/5666027/why-does-the-compiler-state-no-unique-maximal-instance-exists
-		out.write("         @SuppressWarnings(\"unchecked\")\n");
-		out.write("         X oldValue = (X) get(property);\n");
-		out.write("\n");
-		out.write("         try {\n");
-		out.write("             switch(ai.id){\n");
-		
-		out.write("\n");
-		
-		TreeMap<StringName,AttributeDefinition> attributes = cd.getAllAttributesAtThisLevel();
-		for(AttributeDefinition ad: attributes.values()){
-			if (ad.getValueType() == ValueTypeEnum.SINGLE){
-				String capped = GenUtility.capTheName(ad.getName().getNameString());
-				out.write("             case " + ad.getName() + "ID:\n");
-				out.write("                 ((" + cd.getName() + "DMO) core).set" + capped + "(value);\n");
-				out.write("                 break;\n");
-			}
-		}
-		out.write("\n");
-		
-		
-		out.write("             }\n");
-		out.write("        } catch (DmcValueException e) {\n");
-		out.write("             throw(new IllegalStateException(e));\n");
-		out.write("        }\n");
-		out.write("\n");
-		out.write("        notifyPropertyChanged(property, value, oldValue);\n");
-		out.write("        return(oldValue);\n");
-		out.write("    }\n");
+//		out.write("    @Override\n");
+//		out.write("    public <X> X set(String property, X value) {\n");
+//		out.write("        DmcAttributeInfo ai = core.getAttributeInfo(property);\n");
+//		out.write("\n");
+//		out.write("        if (ai == null)\n");
+//		out.write("            throw(new IllegalStateException(\"Unknown attribute: \" + property + \" for class: \" + core.getConstructionClassName()));\n");
+//		out.write("\n");
+//		out.write("        if (ai.valueType != ValueTypeEnum.SINGLE)\n");
+//		out.write("            throw(new IllegalStateException(\"The set() method only supports single-valued attributes. This attribute is multi-valued: \" + property));\n");
+//		out.write("\n");
+//		
+//		// The following cast and suppression is required because of java compiler problems as described here:
+//		// http://stackoverflow.com/questions/5666027/why-does-the-compiler-state-no-unique-maximal-instance-exists
+//		out.write("         @SuppressWarnings(\"unchecked\")\n");
+//		out.write("         X oldValue = (X) get(property);\n");
+//		out.write("\n");
+//		out.write("         try {\n");
+//		out.write("             switch(ai.id){\n");
+//		
+//		out.write("\n");
+//		
+//		TreeMap<DefinitionName,AttributeDefinition> attributes = cd.getAllAttributesAtThisLevel();
+//		for(AttributeDefinition ad: attributes.values()){
+//			if (ad.getValueType() == ValueTypeEnum.SINGLE){
+//				String capped = Manipulator.capFirstChar(ad.getName().getNameString());
+//				out.write("             case " + ad.getName() + "ID:\n");
+//				out.write("                 ((" + cd.getName() + "DMO) core).set" + capped + "(value);\n");
+//				out.write("                 break;\n");
+//			}
+//		}
+//		out.write("\n");
+//		
+//		
+//		out.write("             }\n");
+//		out.write("        } catch (DmcValueException e) {\n");
+//		out.write("             throw(new IllegalStateException(e));\n");
+//		out.write("        }\n");
+//		out.write("\n");
+//		out.write("        notifyPropertyChanged(property, value, oldValue);\n");
+//		out.write("        return(oldValue);\n");
+//		out.write("    }\n");
 		
 	}
 	
@@ -328,7 +333,7 @@ public class GxtDMWGenerator extends BaseDMWGeneratorNewest {
 
 		initNEW(sd, sm);
 
-		String fn = GenUtility.capTheName(sd.getName().getNameString()) + "GxtWrapperFactory";
+		String fn = Manipulator.capFirstChar(sd.getName().getNameString()) + "GxtWrapperFactory";
 		
         BufferedWriter 	out = FileUpdateManager.instance().getWriter(gendir, fn + ".java");
         

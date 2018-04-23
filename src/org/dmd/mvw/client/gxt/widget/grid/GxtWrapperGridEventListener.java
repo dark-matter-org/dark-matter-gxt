@@ -17,55 +17,56 @@ package org.dmd.mvw.client.gxt.widget.grid;
 
 import org.dmd.mvw.client.gxt.dmw.GxtWrapper;
 
-import com.extjs.gxt.ui.client.event.ComponentEvent;
-import com.extjs.gxt.ui.client.event.EventType;
-import com.extjs.gxt.ui.client.event.Events;
-import com.extjs.gxt.ui.client.event.GridEvent;
-import com.extjs.gxt.ui.client.event.Listener;
-import com.extjs.gxt.ui.client.widget.menu.Menu;
+//import com.extjs.gxt.ui.client.event.ComponentEvent;
+//import com.extjs.gxt.ui.client.event.EventType;
+//import com.extjs.gxt.ui.client.event.Events;
+//import com.extjs.gxt.ui.client.event.GridEvent;
+//import com.extjs.gxt.ui.client.event.Listener;
+//import com.extjs.gxt.ui.client.widget.menu.Menu;
 
-public class GxtWrapperGridEventListener implements Listener<ComponentEvent> {
+//public class GxtWrapperGridEventListener implements Listener<ComponentEvent> {
+public class GxtWrapperGridEventListener {
 
-//	MenuController 	mvcMenuController;
-	GxtWrapperGrid<?>		grid;
-	Menu			backgroundMenu;
-	
-	public GxtWrapperGridEventListener(GxtWrapperGrid<?> g){
-		// Get our handle to the menu controller so that we can support context
-		// sensitive popup menus.
-//		mvcMenuController 	= (MenuController) Registry.get("mvc.menuController");
-		grid 				= g;
-		backgroundMenu		= null;
-	}
-	
-	public GxtWrapperGridEventListener(GxtWrapperGrid<?> g, String backgroundMenuName){
-		// Get our handle to the menu controller so that we can support context
-		// sensitive popup menus.
-//		mvcMenuController 	= (MenuController) Registry.get("mvc.menuController");
-		grid 				= g;
-//		backgroundMenu		= mvcMenuController.getBackgroundMenu(backgroundMenuName);
-	}
-	
-	@Override
-	public void handleEvent(ComponentEvent ce) {
-		GridEvent<?> 	ge 	= (GridEvent<?>) ce;
-		EventType	type	= ce.getType();
-		
-		System.out.println("org.dmd.features.extgwt.client.widget.grid.GridEventListener " + ce.getClass().getName() + "  " + ce.getEventTypeInt());
-		if (type == Events.OnMouseDown){
-			
-			if (ge.getModel() == null){
-//				System.out.println("On the background");
-				grid.setContextMenu(backgroundMenu);
-			}
-			else{
-				GxtWrapper obj = (GxtWrapper) ge.getModel();
- 				System.out.println(obj.toOIF());
-				
-//				grid.setContextMenu(mvcMenuController.getPopupMenuForObject(obj.getDmcObject()));
-			}
-		}
-		
-	}
+////	MenuController 	mvcMenuController;
+//	GxtWrapperGrid<?>		grid;
+//	Menu			backgroundMenu;
+//	
+//	public GxtWrapperGridEventListener(GxtWrapperGrid<?> g){
+//		// Get our handle to the menu controller so that we can support context
+//		// sensitive popup menus.
+////		mvcMenuController 	= (MenuController) Registry.get("mvc.menuController");
+//		grid 				= g;
+//		backgroundMenu		= null;
+//	}
+//	
+//	public GxtWrapperGridEventListener(GxtWrapperGrid<?> g, String backgroundMenuName){
+//		// Get our handle to the menu controller so that we can support context
+//		// sensitive popup menus.
+////		mvcMenuController 	= (MenuController) Registry.get("mvc.menuController");
+//		grid 				= g;
+////		backgroundMenu		= mvcMenuController.getBackgroundMenu(backgroundMenuName);
+//	}
+//	
+//	@Override
+//	public void handleEvent(ComponentEvent ce) {
+//		GridEvent<?> 	ge 	= (GridEvent<?>) ce;
+//		EventType	type	= ce.getType();
+//		
+//		System.out.println("org.dmd.features.extgwt.client.widget.grid.GridEventListener " + ce.getClass().getName() + "  " + ce.getEventTypeInt());
+//		if (type == Events.OnMouseDown){
+//			
+//			if (ge.getModel() == null){
+////				System.out.println("On the background");
+//				grid.setContextMenu(backgroundMenu);
+//			}
+//			else{
+//				GxtWrapper obj = (GxtWrapper) ge.getModel();
+// 				System.out.println(obj.toOIF());
+//				
+////				grid.setContextMenu(mvcMenuController.getPopupMenuForObject(obj.getDmcObject()));
+//			}
+//		}
+//		
+//	}
 
 }

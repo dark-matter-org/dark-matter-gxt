@@ -20,34 +20,34 @@ public class GxtNamedObjectListStore<E extends GxtNamedObjectWrapper> extends Gx
 		objmap = new HashMap<DmcObjectName, E>();
 	}
 	
-	/**
-	 * Adds the specified object to the store. If an object with the same key had already
-	 * existed, it is removed.
-	 */
-	@Override
-	public void add(E obj){
-		E existing = objmap.get(obj.getObjectName());
-		
-		if (existing != null){
-			objmap.remove(existing.getObjectName());
-			super.remove(existing);
-		}
-		
-		objmap.put(obj.getObjectName(), obj);
-		super.add(obj);
-	}
-	
-	/**
-	 * Deletes the object with the specified name.
-	 * @param key
-	 */
-	public void delete(DmcObjectName key){
-		E existing = objmap.get(key);
-		
-		if (existing != null){
-			objmap.remove(existing.getObjectName());
-			super.remove(existing);
-		}
-		
-	}
+//	/**
+//	 * Adds the specified object to the store. If an object with the same key had already
+//	 * existed, it is removed.
+//	 */
+//	@Override
+//	public void add(E obj){
+//		E existing = objmap.get(obj.getObjectName());
+//		
+//		if (existing != null){
+//			objmap.remove(existing.getObjectName());
+//			super.remove(existing);
+//		}
+//		
+//		objmap.put(obj.getObjectName(), obj);
+//		super.add(obj);
+//	}
+//	
+//	/**
+//	 * Deletes the object with the specified name.
+//	 * @param key
+//	 */
+//	public void delete(DmcObjectName key){
+//		E existing = objmap.get(key);
+//		
+//		if (existing != null){
+//			objmap.remove(existing.getObjectName());
+//			super.remove(existing);
+//		}
+//		
+//	}
 }

@@ -1,6 +1,6 @@
 package org.dmd.mvw.client.gxtforms.implementation;
 
-import com.extjs.gxt.ui.client.data.BaseModel;
+//import com.extjs.gxt.ui.client.data.BaseModel;
 
 /**
  * The GxtEnumValue is a helper class that's used to represent values associated
@@ -11,7 +11,8 @@ import com.extjs.gxt.ui.client.data.BaseModel;
  * Model View Whatever (MVW).
  */
 @SuppressWarnings("serial")
-public class GxtEnumValue extends BaseModel {
+//public class GxtEnumValue extends BaseModel {
+public class GxtEnumValue {
 	
 	int numericValue;
 	
@@ -23,11 +24,13 @@ public class GxtEnumValue extends BaseModel {
 	}
 
 	public void setEnumValue(String enumValue){
-		set("enumValue",enumValue);
+//		set("enumValue",enumValue);
 	}
 	
 	public String getEnumValue(){
-		return(get("enumValue"));
+		// TODO actual implementation
+		return(null);
+//		return(get("enumValue"));
 	}
 	
 	public int getNumericValue(){
@@ -35,19 +38,25 @@ public class GxtEnumValue extends BaseModel {
 	}
 	
 	public void setSortOrder(String sortOrder){
-		set("sortOrder",sortOrder);
+		// TODO actual implementation
+//		set("sortOrder",sortOrder);
 	}
 	
 	public String getSortOrder(){
-		return(get("sortOrder"));
+		// TODO actual implementation
+		return(null);
+//		return(get("sortOrder"));
 	}
 	
 	public void setLabel(String label){
-		set("label",label);
+		// TODO actual implementation
+//		set("label",label);
 	}
 	
 	public String getLabel(){
-		return(get("label"));
+		// TODO actual implementation
+//		return(get("label"));
+		return(null);
 	}
 	
 	public String toString(){

@@ -3,11 +3,11 @@ package org.dmd.mvw.extensions;
 import java.io.BufferedWriter;
 import java.io.IOException;
 
-import org.dmd.dms.util.GenUtility;
 import org.dmd.mvw.tools.mvwgenerator.extended.forms.EnumMapping;
 import org.dmd.mvw.tools.mvwgenerator.interfaces.MvwEnumMappingGeneratorIF;
 import org.dmd.util.FileUpdateManager;
 import org.dmd.util.codegen.ImportManager;
+import org.dmd.util.codegen.Manipulator;
 import org.dmd.util.exceptions.DebugInfo;
 
 public class GxtEnumMappingFormatter implements MvwEnumMappingGeneratorIF {
@@ -19,7 +19,8 @@ public class GxtEnumMappingFormatter implements MvwEnumMappingGeneratorIF {
 	public void formatEnumMapping(String outdir, EnumMapping mapping) throws IOException {
 		String genPackage = mapping.getDefinedInModule().getGenPackage();
 		
-		String 			name 	= GenUtility.capTheName(mapping.getMappingName().getNameString());
+		String 			name 	= Manipulator.capFirstChar(mapping.getMappingName().getNameString());
+//		String 			name 	= GenUtility.capTheName(mapping.getMappingName().getNameString());
         BufferedWriter 	out 	= FileUpdateManager.instance().getWriter(outdir, name + ".java");
         ImportManager	imports = new ImportManager();
         

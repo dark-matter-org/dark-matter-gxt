@@ -17,10 +17,11 @@ package org.dmd.mvw.client.gxt.widget.grid;
 
 import org.dmd.mvw.client.gxt.dmw.GxtWrapper;
 
-import com.extjs.gxt.ui.client.event.SelectionChangedEvent;
-import com.extjs.gxt.ui.client.event.SelectionChangedListener;
+//import com.extjs.gxt.ui.client.event.SelectionChangedEvent;
+//import com.extjs.gxt.ui.client.event.SelectionChangedListener;
 
-public class GxtWrapperGridSelectionChangedListener extends SelectionChangedListener<GxtWrapper> {
+//public class GxtWrapperGridSelectionChangedListener extends SelectionChangedListener<GxtWrapper> {
+public class GxtWrapperGridSelectionChangedListener {
 
 //	MenuController 	mvcMenuController;
 	GxtWrapperGrid<?>			grid;
@@ -30,9 +31,9 @@ public class GxtWrapperGridSelectionChangedListener extends SelectionChangedList
 		grid = g;
 	}
 	
-	@Override
-	public void selectionChanged(SelectionChangedEvent<GxtWrapper> se) {
-//		mvcMenuController.setLastSelectionModel(grid.getSelectionModel());
-	}
+//	@Override
+//	public void selectionChanged(SelectionChangedEvent<GxtWrapper> se) {
+////		mvcMenuController.setLastSelectionModel(grid.getSelectionModel());
+//	}
 
 }

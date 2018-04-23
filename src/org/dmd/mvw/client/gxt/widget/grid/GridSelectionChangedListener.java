@@ -17,8 +17,8 @@ package org.dmd.mvw.client.gxt.widget.grid;
 
 import org.dmd.mvw.client.gxt.dmw.GxtWrapper;
 
-import com.extjs.gxt.ui.client.event.SelectionChangedEvent;
-import com.extjs.gxt.ui.client.event.SelectionChangedListener;
+//import com.extjs.gxt.ui.client.event.SelectionChangedEvent;
+//import com.extjs.gxt.ui.client.event.SelectionChangedListener;
 
 /**
  * The GridSelectionChangedListener provides a typed listener for selection changes
@@ -28,7 +28,8 @@ import com.extjs.gxt.ui.client.event.SelectionChangedListener;
  * with the GxtWrapperGrid.
  */
 @Deprecated
-public class GridSelectionChangedListener extends SelectionChangedListener<GxtWrapper> {
+//public class GridSelectionChangedListener extends SelectionChangedListener<GxtWrapper> {
+public class GridSelectionChangedListener {
 
 //	MenuController 	mvcMenuController;
 	GxtGrid			grid;
@@ -38,9 +39,9 @@ public class GridSelectionChangedListener extends SelectionChangedListener<GxtWr
 		grid = g;
 	}
 	
-	@Override
-	public void selectionChanged(SelectionChangedEvent<GxtWrapper> se) {
-//		mvcMenuController.setLastSelectionModel(grid.getSelectionModel());
-	}
+//	@Override
+//	public void selectionChanged(SelectionChangedEvent<GxtWrapper> se) {
+////		mvcMenuController.setLastSelectionModel(grid.getSelectionModel());
+//	}
 
 }

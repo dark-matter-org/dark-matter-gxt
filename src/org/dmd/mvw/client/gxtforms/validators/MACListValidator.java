@@ -1,8 +1,11 @@
 package org.dmd.mvw.client.gxtforms.validators;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.dmd.dmc.types.CheapSplitter;
+
+import com.google.gwt.editor.client.Editor;
 
 /**
  * The IntegerListValidator validates a comma separated list of integers.
@@ -56,6 +59,12 @@ public class MACListValidator extends CommaSeparatedValuesValidator<String> {
 		}
 		
 		return(rc);
+	}
+
+	@Override
+	public List validate(Editor editor, Object value) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	
