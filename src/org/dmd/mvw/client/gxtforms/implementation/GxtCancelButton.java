@@ -1,48 +1,30 @@
 package org.dmd.mvw.client.gxtforms.implementation;
 
-import org.dmd.dmc.presentation.DmcChangeListenerIF;
-import org.dmd.dmc.presentation.DmcPresentationTrackerIF;
+import com.sencha.gxt.widget.core.client.button.TextButton;
+import com.sencha.gxt.widget.core.client.event.SelectEvent;
+import com.sencha.gxt.widget.core.client.event.SelectEvent.SelectHandler;
 
-import com.extjs.gxt.ui.client.event.ButtonEvent;
-import com.extjs.gxt.ui.client.event.Events;
-import com.extjs.gxt.ui.client.event.Listener;
-import com.extjs.gxt.ui.client.widget.button.Button;
-
-public class GxtCancelButton extends Button implements DmcChangeListenerIF {
+/**
+ * The GxtCancelButton is used to cancel an overall operation e.g. editting an object.
+ */
+public class GxtCancelButton extends TextButton {
 	
-	Listener<ButtonEvent>		listener;
-	GxtCancelButtonListenerIF	clickListener;
-	DmcPresentationTrackerIF	tracker;
+	private GxtCancelButtonListenerIF clickListener;
 	
-	public GxtCancelButton(String label, DmcPresentationTrackerIF t, GxtCancelButtonListenerIF cl){
+	public GxtCancelButton(String label, GxtCancelButtonListenerIF cl) {
 		super(label);
 		
-		tracker = t;
-		
-		clickListener = cl;
-		
-		listener = new Listener<ButtonEvent>() {
+		this.clickListener = cl;
 
+		addSelectHandler(new SelectHandler() {
+			
 			@Override
-			public void handleEvent(ButtonEvent be) {
-				if (be.getType() == Events.Select){
-					tracker.reset();
-					clickListener.cancelButtonClicked();
-				}
+			public void onSelect(SelectEvent event) {
+				clickListener.cancelButtonClicked();
 			}
-		};
+		});
 		
-		addListener(Events.Select, listener);
-		
-		tracker.addChangeListener(this);
-		
-		setEnabled(false);
-	}
-
-	@Override
-	public void isChanged(boolean changed) {
-//		System.out.println("Cancel button isChanged() " + changed);
-		setEnabled(changed);
+		setEnabled(true);
 	}
 
 }

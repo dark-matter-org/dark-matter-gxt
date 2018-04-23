@@ -1,58 +1,61 @@
 package org.dmd.dmt.client.generated;
 
 // Generated from: org.dmd.util.codegen.ImportManager.getFormattedImports(ImportManager.java:82)
-// Called from: org.dmd.mvw.gxt.dmw.generators.GxtDMWGenerator.createAutoWrapperNEW(GxtDMWGenerator.java:214)
-import org.dmd.dmc.DmcObject;                                  // The object we wrap - (GxtDMWGenerator.java:255)
-import org.dmd.dmt.client.generated.gxt.*;                     // Access to the wrappers for the dmt schema - (GxtDMWGenerator.java:313)
-import org.dmd.dmt.shared.generated.dmo.*;                     // Access to the DMOs for the dmt schema - (GxtDMWGenerator.java:314)
-import org.dmd.mvw.client.gxt.dmw.GxtWrapper;                  // The wrapper we return - (GxtDMWGenerator.java:256)
-import org.dmd.mvw.client.gxt.dmw.GxtWrapperFactoryIF;         // The standard wrapper util interface - (GxtDMWGenerator.java:257)
+// Called from: org.dmd.mvw.gxt.dmw.generators.GxtDMWGenerator.createAutoWrapperNEW(GxtDMWGenerator.java:342)
+import org.dmd.dmc.DmcObject;                                  // The object we wrap - (GxtDMWGenerator.java:383)
+import org.dmd.dmt.client.generated.gxt.*;                     // Access to the wrappers for the dmt schema - (GxtDMWGenerator.java:441)
+import org.dmd.dmt.shared.generated.dmo.*;                     // Access to the DMOs for the dmt schema - (GxtDMWGenerator.java:442)
+import org.dmd.mvw.client.gxt.dmw.GxtWrapper;                  // The wrapper we return - (GxtDMWGenerator.java:384)
+import org.dmd.mvw.client.gxt.dmw.GxtWrapperFactoryIF;         // The standard wrapper util interface - (GxtDMWGenerator.java:385)
 
-// Generated from: org.dmd.mvw.gxt.dmw.generators.GxtDMWGenerator.createAutoWrapperNEW(GxtDMWGenerator.java:217)
+
+// Generated from: org.dmd.mvw.gxt.dmw.generators.GxtDMWGenerator.createAutoWrapperNEW(GxtDMWGenerator.java:345)
 public class DmtGxtWrapperFactory implements GxtWrapperFactoryIF {
 
-    static final int ClientCountFilterID = 10017;
-    static final int ComplexTypeTestID = 10409;
-    static final int ExtendedRefHSID = 10406;
-    static final int ExtendedRefMVID = 10402;
-    static final int ExtendedRefMVIDXID = 10403;
-    static final int ExtendedRefSVID = 10401;
-    static final int ExtendedRefTSID = 10407;
-    static final int IntegerNamedObjectID = 10013;
-    static final int NameContainerTestID = 10014;
-    static final int NamedObjHMID = 10204;
-    static final int NamedObjHSID = 10206;
-    static final int NamedObjMVID = 10202;
-    static final int NamedObjMVIDXID = 10203;
-    static final int NamedObjSVID = 10201;
-    static final int NamedObjTMID = 10205;
-    static final int NamedObjTSID = 10207;
-    static final int ObjWithRefsID = 10016;
-    static final int ParseTestID = 10408;
-    static final int PrimitiveHMID = 10104;
-    static final int PrimitiveHSID = 10106;
-    static final int PrimitiveMVID = 10102;
-    static final int PrimitiveMVIDXID = 10103;
-    static final int PrimitiveSVID = 10101;
-    static final int PrimitiveTMID = 10105;
-    static final int PrimitiveTSID = 10107;
-    static final int TestBasicAuxiliaryID = 10006;
-    static final int TestBasicNamedObjectExtendedID = 10005;
-    static final int TestBasicNamedObjectFixedID = 10004;
-    static final int TestBasicObjectFixedID = 10003;
-    static final int TestDerivedDiffSubpackageID = 10011;
-    static final int TestDerivedSubpackageID = 10010;
-    static final int TestMultiLevelSubpackageID = 10009;
-    static final int TestOneLevelSubpackageID = 10007;
-    static final int TestOneLevelSubpackageExtendedID = 10008;
-    static final int UUIDNamedObjectID = 10012;
-    static final int UnnamedObjHSID = 10306;
-    static final int UnnamedObjMVID = 10302;
-    static final int UnnamedObjMVIDXID = 10303;
-    static final int UnnamedObjSVID = 10301;
-    static final int UnnamedObjTSID = 10307;
-    static final int UsingIndexedAttributesID = 10019;
-    static final int UsingObjRefHMID = 10020;
+    static final int ClientCountFilterID = 20017;
+    static final int ComplexTypeTestID = 20409;
+    static final int ExtendedRefHSID = 20406;
+    static final int ExtendedRefMVID = 20402;
+    static final int ExtendedRefMVIDXID = 20403;
+    static final int ExtendedRefSVID = 20401;
+    static final int ExtendedRefTSID = 20407;
+    static final int IntegerNamedObjectID = 20013;
+    static final int NameContainerTestID = 20014;
+    static final int NamedObjHMID = 20204;
+    static final int NamedObjHSID = 20206;
+    static final int NamedObjMVID = 20202;
+    static final int NamedObjMVIDXID = 20203;
+    static final int NamedObjSVID = 20201;
+    static final int NamedObjTMID = 20205;
+    static final int NamedObjTSID = 20207;
+    static final int ObjWithRefsID = 20016;
+    static final int ObjWithRefsDerivedAID = 20021;
+    static final int ObjWithRefsDerivedBID = 20022;
+    static final int ParseTestID = 20408;
+    static final int PrimitiveHMID = 20104;
+    static final int PrimitiveHSID = 20106;
+    static final int PrimitiveMVID = 20102;
+    static final int PrimitiveMVIDXID = 20103;
+    static final int PrimitiveSVID = 20101;
+    static final int PrimitiveTMID = 20105;
+    static final int PrimitiveTSID = 20107;
+    static final int TestBasicAuxiliaryID = 20006;
+    static final int TestBasicNamedObjectExtendedID = 20005;
+    static final int TestBasicNamedObjectFixedID = 20004;
+    static final int TestBasicObjectFixedID = 20003;
+    static final int TestDerivedDiffSubpackageID = 20011;
+    static final int TestDerivedSubpackageID = 20010;
+    static final int TestMultiLevelSubpackageID = 20009;
+    static final int TestOneLevelSubpackageID = 20007;
+    static final int TestOneLevelSubpackageExtendedID = 20008;
+    static final int UUIDNamedObjectID = 20012;
+    static final int UnnamedObjHSID = 20306;
+    static final int UnnamedObjMVID = 20302;
+    static final int UnnamedObjMVIDXID = 20303;
+    static final int UnnamedObjSVID = 20301;
+    static final int UnnamedObjTSID = 20307;
+    static final int UsingIndexedAttributesID = 20019;
+    static final int UsingObjRefHMID = 20020;
 
 
     static DmtGxtWrapperFactory instance;
@@ -122,6 +125,12 @@ public class DmtGxtWrapperFactory implements GxtWrapperFactoryIF {
             break;
         case ObjWithRefsID:
             rc = new ObjWithRefsGXT((ObjWithRefsDMO)obj);
+            break;
+        case ObjWithRefsDerivedAID:
+            rc = new ObjWithRefsDerivedAGXT((ObjWithRefsDerivedADMO)obj);
+            break;
+        case ObjWithRefsDerivedBID:
+            rc = new ObjWithRefsDerivedBGXT((ObjWithRefsDerivedBDMO)obj);
             break;
         case ParseTestID:
             rc = new ParseTestGXT((ParseTestDMO)obj);

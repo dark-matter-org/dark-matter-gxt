@@ -18,50 +18,51 @@ package org.dmd.mvw.client.gxt.widget.grid;
 import org.dmd.mvw.client.gxt.dmw.GxtWrapper;
 import org.dmd.mvw.client.gxt.store.GxtListStore;
 
-import com.extjs.gxt.ui.client.Style;
-import com.extjs.gxt.ui.client.Style.SelectionMode;
-import com.extjs.gxt.ui.client.event.Events;
-import com.extjs.gxt.ui.client.event.SelectionChangedListener;
-import com.extjs.gxt.ui.client.widget.grid.ColumnModel;
-import com.extjs.gxt.ui.client.widget.grid.Grid;
-import com.extjs.gxt.ui.client.widget.grid.GridSelectionModel;
+//import com.extjs.gxt.ui.client.Style;
+//import com.extjs.gxt.ui.client.Style.SelectionMode;
+//import com.extjs.gxt.ui.client.event.Events;
+//import com.extjs.gxt.ui.client.event.SelectionChangedListener;
+//import com.extjs.gxt.ui.client.widget.grid.ColumnModel;
+//import com.extjs.gxt.ui.client.widget.grid.Grid;
+//import com.extjs.gxt.ui.client.widget.grid.GridSelectionModel;
 
-public class GxtWrapperGrid<E extends GxtWrapper> extends Grid<E> {
+//public class GxtWrapperGrid<E extends GxtWrapper> extends Grid<E> {
+public class GxtWrapperGrid<E extends GxtWrapper> {
 
 	GxtWrapperGridEventListener				eventListener;
 	
 	GxtWrapperGridSelectionChangedListener	selectionListener;
 	
-	/**
-	 * Constructs a new grid.
-	 * @param dgs The backing store.
-	 * @param cm  The column model.
-	 */
-	public GxtWrapperGrid(GxtListStore<E> dgs, ColumnModel cm){
-		super(dgs,cm);
-		
-		eventListener = new GxtWrapperGridEventListener(this);
-		addListener(Events.OnMouseDown, eventListener);
-		
-		selectionListener = new GxtWrapperGridSelectionChangedListener(this);
-		setSelectionMode(SelectionMode.SINGLE);
-	}
-	
-	/**
-	 * Sets the selection mode of the grid. 
-	 * @param mode
-	 */
-	@SuppressWarnings("unchecked")
-	public void setSelectionMode(Style.SelectionMode mode){
-		if (getSelectionModel() != null){
-			getSelectionModel().removeSelectionListener((SelectionChangedListener<E>) selectionListener);
-		}
-		
-		GridSelectionModel<E> sel;
-		sel = new GridSelectionModel<E>();
-		sel.addSelectionChangedListener((SelectionChangedListener<E>) selectionListener);
-		sel.setSelectionMode(mode);
-		setSelectionModel(sel);
-	}
+//	/**
+//	 * Constructs a new grid.
+//	 * @param dgs The backing store.
+//	 * @param cm  The column model.
+//	 */
+//	public GxtWrapperGrid(GxtListStore<E> dgs, ColumnModel cm){
+//		super(dgs,cm);
+//		
+//		eventListener = new GxtWrapperGridEventListener(this);
+//		addListener(Events.OnMouseDown, eventListener);
+//		
+//		selectionListener = new GxtWrapperGridSelectionChangedListener(this);
+//		setSelectionMode(SelectionMode.SINGLE);
+//	}
+//	
+//	/**
+//	 * Sets the selection mode of the grid. 
+//	 * @param mode
+//	 */
+//	@SuppressWarnings("unchecked")
+//	public void setSelectionMode(Style.SelectionMode mode){
+//		if (getSelectionModel() != null){
+//			getSelectionModel().removeSelectionListener((SelectionChangedListener<E>) selectionListener);
+//		}
+//		
+//		GridSelectionModel<E> sel;
+//		sel = new GridSelectionModel<E>();
+//		sel.addSelectionChangedListener((SelectionChangedListener<E>) selectionListener);
+//		sel.setSelectionMode(mode);
+//		setSelectionModel(sel);
+//	}
 
 }

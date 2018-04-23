@@ -4,8 +4,10 @@ import java.util.ArrayList;
 
 import org.dmd.dmc.types.CheapSplitter;
 
-import com.extjs.gxt.ui.client.widget.form.Field;
-import com.extjs.gxt.ui.client.widget.form.Validator;
+import com.sencha.gxt.widget.core.client.form.Validator;
+
+//import com.extjs.gxt.ui.client.widget.form.Field;
+//import com.extjs.gxt.ui.client.widget.form.Validator;
 
 /**
  * The CommaSeparatedValuesValidator provides a common base for validating a
@@ -32,34 +34,34 @@ public abstract class CommaSeparatedValuesValidator<E> implements Validator {
 		this.maxAllowedEntries = maxAllowedEntries;
 	}
 	
-	@Override
-	public String validate(Field<?> field, String value) {
-		while(lastValues.size() > 0)
-			lastValues.remove(0);
-		
-		if (value == null){
-			return(null);
-		}
-		
-		if (value.trim().endsWith(","))
-			return("Missing value after comma.");
-			
-		
-		ArrayList<String> values = CheapSplitter.split(value, ',', false, true);
-		for(String val: values){
-			E checkedValue = typeCheck(val);
-			if (checkedValue == null)
-				return(lastError);
-			lastValues.add(checkedValue);
-		}
-		
-		if(maxAllowedEntries > 0){
-			if(lastValues.size() > maxAllowedEntries){
-				return("Max allowed entries are "+maxAllowedEntries);
-			}
-		}
-		return null;
-	}
+//	@Override
+//	public String validate(Field<?> field, String value) {
+//		while(lastValues.size() > 0)
+//			lastValues.remove(0);
+//		
+//		if (value == null){
+//			return(null);
+//		}
+//		
+//		if (value.trim().endsWith(","))
+//			return("Missing value after comma.");
+//			
+//		
+//		ArrayList<String> values = CheapSplitter.split(value, ',', false, true);
+//		for(String val: values){
+//			E checkedValue = typeCheck(val);
+//			if (checkedValue == null)
+//				return(lastError);
+//			lastValues.add(checkedValue);
+//		}
+//		
+//		if(maxAllowedEntries > 0){
+//			if(lastValues.size() > maxAllowedEntries){
+//				return("Max allowed entries are "+maxAllowedEntries);
+//			}
+//		}
+//		return null;
+//	}
 	
 	public ArrayList<E> getValues(){
 		return(lastValues);
