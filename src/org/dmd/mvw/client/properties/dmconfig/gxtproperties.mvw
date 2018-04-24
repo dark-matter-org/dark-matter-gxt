@@ -1,0 +1,11 @@
+Module
+moduleName	gxtproperties
+genPackage	org.dmd.mvw.client.properties
+description This module defines the property access formatter that
+ can generate the GXT property access interfaces for dark-matter objects (DMOs).
+ 
+PropertyAccessGenerator
+camelCaseName 					GXTPropertyAccessGenerator
+propertyAccessGeneratorClass	org.dmd.mvw.extensions.GxtPropertyAccessFormatter
+description The GXTPropertyAccessGenerator will generate an interface for
+ a particular class of object that makes use of the GXT PropertyAccess marker interface.

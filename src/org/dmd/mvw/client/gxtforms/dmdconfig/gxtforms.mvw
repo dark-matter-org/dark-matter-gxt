@@ -5,106 +5,106 @@ description	The gxtforms module provides definitions of FieldEditors to be used
  in conjunction with Model View Whatever's form binding mechanisms.
 
 FieldEditorDefinition
-editorName		GXTBooleanOnOff
-useClass		org.dmd.mvw.client.gxtforms.editors.GxtBooleanOnOff
-description		Used to display boolean values as a radio selection e.g. on/off
- enabled/disabled etc. You must set the labels for the radio button choices.
- Indexed Booleans are also supported (which would align with a bit mask kind
- of display); you would have to set your own labels in such a situation, since
- the auto set labels probably wouldn't make much sense.
-
-FieldEditorDefinition
-editorName		GXTCheckBox
-useClass		org.dmd.mvw.client.gxtforms.editors.GxtCheckBox
-description		Used to display boolean values in a check box. Indexed Booleans
- are also supported (which would align with a bit mask kind of display); you
- would have to set your own labels in such a situation, since the auto set
- labels probably wouldn't make much sense.
-
-FieldEditorDefinition
-editorName		GXTCheckBoxAlternate
-useClass		org.dmd.mvw.client.gxtforms.editors.GxtCheckBoxAlternate
-description		Used to display boolean values in a check box, but is implemented
- in as a CheckBoxGroup because of rendering issues with GXT.
-
-FieldEditorDefinition
-editorName		GXTDoubleField
-useClass		org.dmd.mvw.client.gxtforms.editors.GxtDoubleField
-description		Used to display double data.
-
-FieldEditorDefinition
-editorName		GXTDualListReferenceField
-useClass		org.dmd.mvw.client.gxtforms.editors.GxtDualListReferenceField
-description		Used to display a dual list of object references.
-
-FieldEditorDefinition
-editorName		GXTEnumCheckField
-useClass		org.dmd.mvw.client.gxtforms.editors.GxtEnumCheckField
-description		Used to display the choices of an enumeration as a set of
- check buttons. You must initialize the field with the generated enum mapping by
- calling its setEnumMapping() method. The editor is only applicable to multi-valued,
- unindexed values; it can be thought of as similar to a bit vector, with each enum
- value corresponding to a bit.
-
-FieldEditorDefinition
-editorName		GXTEnumField
-useClass		org.dmd.mvw.client.gxtforms.editors.GxtEnumField
-description		Used to display any enum for which you have defined an EnumMapping and
- specified the mappingGenerator as GXTEnumGenerator.
- You must initialize the field with the generated enum mapping by calling its 
- setEnumMapping() method.
-
-FieldEditorDefinition
-editorName		GXTEnumRadioField
-useClass		org.dmd.mvw.client.gxtforms.editors.GxtEnumRadioField
-description		Used to display the choices of an enumeration as a set of
- radio buttons. You must initialize the field with the generated enum mapping by
- calling its setEnumMapping() method.
-
-FieldEditorDefinition
-editorName		GXTFloatField
-useClass		org.dmd.mvw.client.gxtforms.editors.GxtFloatField
-description		Used to display float data. You should use great caution if you allow
- users to enter float data; what a user enters IS NOT guaranteed to be returned from the
- floating point parsing mechanisms. For the most part you should use doubles for user edittable
- fields.
-
-FieldEditorDefinition
-editorName		GXTIntegerComboField
-useClass		org.dmd.mvw.client.gxtforms.editors.GxtIntegerComboField
-description		Used to display a set of integer values with an OFF indication.
-
-FieldEditorDefinition
-editorName		GXTIntegerField
-useClass		org.dmd.mvw.client.gxtforms.editors.GxtIntegerField
-description		Used to display integer data.
-
-FieldEditorDefinition
-editorName		GXTIntegerSetField
-useClass		org.dmd.mvw.client.gxtforms.editors.GxtIntegerSetField
-description		Used to display a comma separated list of integer values.
-
-FieldEditorDefinition
-editorName		GXTMACSetField
-useClass		org.dmd.mvw.client.gxtforms.editors.GxtMACSetField
-description		Used to display a comma separated set of MAC addresses; lowercase is assumed for the alpha characters.
-
-FieldEditorDefinition
-editorName		GXTObjectRefComboBox
-useClass		org.dmd.mvw.client.gxtforms.editors.GxtObjectRefComboBox
-description		Used to display a combo box of object references.
-
-FieldEditorDefinition
-editorName		GXTPasswordField
-useClass		org.dmd.mvw.client.gxtforms.editors.GxtPasswordField
-description		Used to display password values.
-
-FieldEditorDefinition
-editorName		GXTStringSetField
-useClass		org.dmd.mvw.client.gxtforms.editors.GxtStringSetField
-description		Used to display a comma seaparated set of string values.
-
-FieldEditorDefinition
 editorName		GXTTextField
-useClass		org.dmd.mvw.client.gxtforms.editors.GxtTextField
+useClass		org.dmd.mvw.client.gxtforms.editors.GXTTextField
 description		Used to display single valued string data.
+
+//FieldEditorDefinition
+//editorName		GXTBooleanOnOff
+//useClass		org.dmd.mvw.client.gxtforms.editors.GxtBooleanOnOff
+//description		Used to display boolean values as a radio selection e.g. on/off
+// enabled/disabled etc. You must set the labels for the radio button choices.
+// Indexed Booleans are also supported (which would align with a bit mask kind
+// of display); you would have to set your own labels in such a situation, since
+// the auto set labels probably wouldn't make much sense.
+//
+//FieldEditorDefinition
+//editorName		GXTCheckBox
+//useClass		org.dmd.mvw.client.gxtforms.editors.GxtCheckBox
+//description		Used to display boolean values in a check box. Indexed Booleans
+// are also supported (which would align with a bit mask kind of display); you
+// would have to set your own labels in such a situation, since the auto set
+// labels probably wouldn't make much sense.
+//
+//FieldEditorDefinition
+//editorName		GXTCheckBoxAlternate
+//useClass		org.dmd.mvw.client.gxtforms.editors.GxtCheckBoxAlternate
+//description		Used to display boolean values in a check box, but is implemented
+// in as a CheckBoxGroup because of rendering issues with GXT.
+//
+//FieldEditorDefinition
+//editorName		GXTDoubleField
+//useClass		org.dmd.mvw.client.gxtforms.editors.GxtDoubleField
+//description		Used to display double data.
+//
+//FieldEditorDefinition
+//editorName		GXTDualListReferenceField
+//useClass		org.dmd.mvw.client.gxtforms.editors.GxtDualListReferenceField
+//description		Used to display a dual list of object references.
+//
+//FieldEditorDefinition
+//editorName		GXTEnumCheckField
+//useClass		org.dmd.mvw.client.gxtforms.editors.GxtEnumCheckField
+//description		Used to display the choices of an enumeration as a set of
+// check buttons. You must initialize the field with the generated enum mapping by
+// calling its setEnumMapping() method. The editor is only applicable to multi-valued,
+// unindexed values; it can be thought of as similar to a bit vector, with each enum
+// value corresponding to a bit.
+//
+//FieldEditorDefinition
+//editorName		GXTEnumField
+//useClass		org.dmd.mvw.client.gxtforms.editors.GxtEnumField
+//description		Used to display any enum for which you have defined an EnumMapping and
+// specified the mappingGenerator as GXTEnumGenerator.
+// You must initialize the field with the generated enum mapping by calling its 
+// setEnumMapping() method.
+//
+//FieldEditorDefinition
+//editorName		GXTEnumRadioField
+//useClass		org.dmd.mvw.client.gxtforms.editors.GxtEnumRadioField
+//description		Used to display the choices of an enumeration as a set of
+// radio buttons. You must initialize the field with the generated enum mapping by
+// calling its setEnumMapping() method.
+//
+//FieldEditorDefinition
+//editorName		GXTFloatField
+//useClass		org.dmd.mvw.client.gxtforms.editors.GxtFloatField
+//description		Used to display float data. You should use great caution if you allow
+// users to enter float data; what a user enters IS NOT guaranteed to be returned from the
+// floating point parsing mechanisms. For the most part you should use doubles for user edittable
+// fields.
+//
+//FieldEditorDefinition
+//editorName		GXTIntegerComboField
+//useClass		org.dmd.mvw.client.gxtforms.editors.GxtIntegerComboField
+//description		Used to display a set of integer values with an OFF indication.
+//
+//FieldEditorDefinition
+//editorName		GXTIntegerField
+//useClass		org.dmd.mvw.client.gxtforms.editors.GxtIntegerField
+//description		Used to display integer data.
+//
+//FieldEditorDefinition
+//editorName		GXTIntegerSetField
+//useClass		org.dmd.mvw.client.gxtforms.editors.GxtIntegerSetField
+//description		Used to display a comma separated list of integer values.
+//
+//FieldEditorDefinition
+//editorName		GXTMACSetField
+//useClass		org.dmd.mvw.client.gxtforms.editors.GxtMACSetField
+//description		Used to display a comma separated set of MAC addresses; lowercase is assumed for the alpha characters.
+//
+//FieldEditorDefinition
+//editorName		GXTObjectRefComboBox
+//useClass		org.dmd.mvw.client.gxtforms.editors.GxtObjectRefComboBox
+//description		Used to display a combo box of object references.
+//
+//FieldEditorDefinition
+//editorName		GXTPasswordField
+//useClass		org.dmd.mvw.client.gxtforms.editors.GxtPasswordField
+//description		Used to display password values.
+//
+//FieldEditorDefinition
+//editorName		GXTStringSetField
+//useClass		org.dmd.mvw.client.gxtforms.editors.GxtStringSetField
+//description		Used to display a comma seaparated set of string values.
