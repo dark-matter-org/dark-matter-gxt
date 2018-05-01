@@ -36,7 +36,7 @@ public class GXTTextField extends MvwFieldEditor {
 
 	public GXTTextField() {
 		super();
-		widget = new TextField()	;
+		widget = new TextField();
 		
 		// The value change event is only fired when the field loses focus
 		// so that's useless.
@@ -339,6 +339,11 @@ public class GXTTextField extends MvwFieldEditor {
 	void NOTREADY(){
 		if (tracker != null)
 			tracker.isNotReady(this);
+	}
+
+	@Override
+	public void focus() {
+		widget.focus();
 	}
 
 
