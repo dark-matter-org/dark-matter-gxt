@@ -8,28 +8,18 @@ import org.dmd.dmc.types.CheapSplitter;
 import com.google.gwt.editor.client.Editor;
 
 /**
- * The IntegerListValidator validates a comma separated list of integers.
+ * The MACListValidator validates a comma separated list of values that conform
+ * to MAC addresses.
  * If constructed with a range, it will also check that the integers are
  * in the specified range.
  */
-public class MACListValidator extends CommaSeparatedValuesValidator<String> {
+public class MACListValidator extends CSVValidator<String> {
 	
 	boolean range;
-	Integer	start;
-	Integer	end;
 	
 	public MACListValidator(){
 		super();
 		range = false;
-	}
-
-	public MACListValidator(Integer s, Integer e){
-		super();
-		range = true;
-		if (s >= e)
-			throw(new IllegalStateException("The start of the range must be less than the end of the range."));
-		start 	= s;
-		end 	= e;
 	}
 
 	@Override
@@ -60,12 +50,5 @@ public class MACListValidator extends CommaSeparatedValuesValidator<String> {
 		
 		return(rc);
 	}
-
-	@Override
-	public List validate(Editor editor, Object value) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	
 }

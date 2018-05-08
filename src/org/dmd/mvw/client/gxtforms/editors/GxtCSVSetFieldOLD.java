@@ -24,7 +24,7 @@ import org.dmd.mvw.client.gxtforms.validators.CommaSeparatedValuesValidator;
  * @param <E> The type of the values.
  */
 //abstract public class GxtCSVSetField<E> extends TextField<String> implements DmcPresentationIF {
-abstract public class GxtCSVSetField<E> implements DmcPresentationIF {
+abstract public class GxtCSVSetFieldOLD<E> implements DmcPresentationIF {
 	
 //	// Our Unique ID assigned by the tracker
 //	int							ID;

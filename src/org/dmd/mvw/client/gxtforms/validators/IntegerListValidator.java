@@ -1,15 +1,11 @@
 package org.dmd.mvw.client.gxtforms.validators;
 
-import java.util.List;
-
-import com.google.gwt.editor.client.Editor;
-
 /**
  * The IntegerListValidator validates a comma separated list of integers.
  * If constructed with a range, it will also check that the integers are
  * in the specified range.
  */
-public class IntegerListValidator extends CommaSeparatedValuesValidator<Integer> {
+public class IntegerListValidator extends CSVValidator<Integer> {
 	
 	boolean range;
 	Integer	start;
@@ -46,12 +42,5 @@ public class IntegerListValidator extends CommaSeparatedValuesValidator<Integer>
 			return(null);
 		}
 	}
-
-	@Override
-	public List validate(Editor editor, Object value) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
 	
 }
