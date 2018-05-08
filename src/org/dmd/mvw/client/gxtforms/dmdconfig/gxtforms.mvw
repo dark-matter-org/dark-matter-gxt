@@ -103,8 +103,8 @@ description		Used to display single valued string data.
 //editorName		GXTPasswordField
 //useClass		org.dmd.mvw.client.gxtforms.editors.GxtPasswordField
 //description		Used to display password values.
-//
-//FieldEditorDefinition
-//editorName		GXTStringSetField
-//useClass		org.dmd.mvw.client.gxtforms.editors.GxtStringSetField
-//description		Used to display a comma seaparated set of string values.
+
+FieldEditorDefinition
+editorName		GXTStringSetField
+useClass		org.dmd.mvw.client.gxtforms.editors.GXTStringSetField
+description		Used to display a comma separated set of string values.

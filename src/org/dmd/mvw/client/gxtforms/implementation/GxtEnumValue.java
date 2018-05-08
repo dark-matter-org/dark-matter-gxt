@@ -1,79 +1,68 @@
 package org.dmd.mvw.client.gxtforms.implementation;
 
-//import com.extjs.gxt.ui.client.data.BaseModel;
-
 /**
  * The GxtEnumValue is a helper class that's used to represent values associated
- * with Dark Matter Schema EnumDefinition. This is required since ComboBoxes are
+ * with Dark Matter Schema Enum Definitions. This is required since ComboBoxes are
  * populated using a ListStore which takes a BaseModel derived class.
  * <p />
  * Instance of GxtEnumValues are generated from GxtEnumMapping declarations in
  * Model View Whatever (MVW).
  */
-@SuppressWarnings("serial")
-//public class GxtEnumValue extends BaseModel {
-public class GxtEnumValue {
+public class GxtEnumValue implements Comparable<GxtEnumValue>{
 	
-	int numericValue;
+	// The enum value as an uppercase string
+	private String	enumValue;
+	
+	// The numeric value
+	private int		numericValue;
+	
+	// A string that places this value in a particular lexicographic order
+	private String	sortOrder;
+	
+	// The label displayed to represent this value
+	private String	label;
 	
 	public GxtEnumValue(String enumValue, Integer nv, String sortOrder, String label){
-		setEnumValue(enumValue);
-		numericValue = nv;
-		setSortOrder(sortOrder);
-		setLabel(label);
+		this.enumValue = enumValue;
+		this.numericValue = nv;
+		this.sortOrder = sortOrder;
+		this.label = label;
 	}
 
-	public void setEnumValue(String enumValue){
-//		set("enumValue",enumValue);
-	}
-	
 	public String getEnumValue(){
-		// TODO actual implementation
-		return(null);
-//		return(get("enumValue"));
+		return(enumValue);
 	}
 	
 	public int getNumericValue(){
 		return(numericValue);
 	}
 	
-	public void setSortOrder(String sortOrder){
-		// TODO actual implementation
-//		set("sortOrder",sortOrder);
-	}
-	
 	public String getSortOrder(){
-		// TODO actual implementation
-		return(null);
-//		return(get("sortOrder"));
-	}
-	
-	public void setLabel(String label){
-		// TODO actual implementation
-//		set("label",label);
+		return(sortOrder);
 	}
 	
 	public String getLabel(){
-		// TODO actual implementation
-//		return(get("label"));
-		return(null);
+		return(label);
 	}
 	
 	public String toString(){
 		return(getEnumValue() + " - " + numericValue + " - " + getSortOrder() + " - " + getLabel());
 	}
-	
-//	@SuppressWarnings("unchecked")
-//	@Override
-//	public <X> X get(String property) {
-//		if (property.equals("enumValue"))
-//			return (X) (getEnumValue());
-//		if (property.equals("sortOrder"))
-//			return (X) (getSortOrder());
-//		if (property.equals("label"))
-//			return (X) (getLabel());
-//		return(null);
-//	}
 
+	@Override
+	public int compareTo(GxtEnumValue o) {
+		return(sortOrder.compareTo(o.sortOrder));
+	}
+	
+	public boolean equals(Object obj) {
+		if (obj instanceof GxtEnumValue) {
+			GxtEnumValue other = (GxtEnumValue) obj;
+			
+			if ( (enumValue == other.enumValue) && (numericValue == other.numericValue))
+				return(true);
+		}
+		return(false);
+	}
+	
 	
 }

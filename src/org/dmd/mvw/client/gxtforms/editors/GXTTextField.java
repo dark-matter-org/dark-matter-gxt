@@ -23,16 +23,16 @@ import com.sencha.gxt.widget.core.client.form.Validator;
 public class GXTTextField extends MvwFieldEditor {
 	
 	// Our widget implementation
-	TextField		widget;
+	protected TextField		widget;
 
 	// A convenience handle to the adapter cast to an attribute
-	DmcAttribute<?>	attribute;
+	private DmcAttribute<?>	attribute;
 	
 	// We hang on to our initial value in case we have the situation where we are marked
 	// as invalid (because of a validator). If we're invalid, we won't alter the adapter
 	// and thus we have to determine ourselves if our value has changed so that we can
 	// correctly answer the tracker through the valueChanged() method.
-	String			initialValue;
+	private String			initialValue;
 
 	public GXTTextField() {
 		super();
@@ -277,9 +277,18 @@ public class GXTTextField extends MvwFieldEditor {
 		return(rc);
 	}
 
+	/**
+	 * We override this to clear any outstanding invalid flags on the field when it is disabled.
+	 * Otherwise, the invalid stuff remains even when the field is disabled.
+	 */
 	@Override
-	public void setEnabled(boolean flag) {
-		widget.setEnabled(flag);
+	public void setEnabled(boolean enabled) {
+		widget.setEnabled(enabled);
+		
+		if (enabled)
+			isValid();
+		else
+			widget.clearInvalid();
 	}
 
 	@Override
@@ -331,16 +340,6 @@ public class GXTTextField extends MvwFieldEditor {
 		}
 	}
 	
-	void READY(){
-		if (tracker != null)
-			tracker.isReady(this);
-	}
-	
-	void NOTREADY(){
-		if (tracker != null)
-			tracker.isNotReady(this);
-	}
-
 	@Override
 	public void focus() {
 		widget.focus();

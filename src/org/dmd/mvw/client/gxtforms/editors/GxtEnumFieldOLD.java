@@ -19,7 +19,7 @@ import org.dmd.mvw.client.gxtforms.implementation.GxtEnumValue;
 //import com.extjs.gxt.ui.client.widget.form.ComboBox;
 
 //public class GxtEnumField extends ComboBox<GxtEnumValue> implements DmcPresentationIF {
-public class GxtEnumField implements DmcPresentationIF {
+public class GxtEnumFieldOLD implements DmcPresentationIF {
 
 	@Override
 	public void setLabel(String label) {

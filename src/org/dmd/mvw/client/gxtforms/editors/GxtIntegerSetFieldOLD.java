@@ -6,9 +6,9 @@ import org.dmd.mvw.client.gxtforms.validators.IntegerListValidator;
  * The GxtIntegerSetField is used to display a comma separated list of integers.
  */
 //public class GxtIntegerSetField extends GxtCSVSetField<Integer> {
-public class GxtIntegerSetField {
+public class GxtIntegerSetFieldOLD {
 
-	public GxtIntegerSetField(){
+	public GxtIntegerSetFieldOLD(){
 		setValidator(new IntegerListValidator());
 	}
 

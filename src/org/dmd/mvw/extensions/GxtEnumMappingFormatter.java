@@ -38,6 +38,11 @@ public class GxtEnumMappingFormatter implements MvwEnumMappingGeneratorIF {
         
         out.write("    static " + name + " instance;\n\n");
         
+        if (mapping.getEmptyText() == null)
+            out.write("    private String emptyText;\n\n");
+        else
+        	out.write("    private String emptyText = \"" + mapping.getEmptyText() + "\";\n\n");
+        
         out.write("    final String enumName = \"" + mapping.getEnumName() + "\";\n\n");
         
         out.write(mapping.getStaticValues() + "\n");
@@ -50,6 +55,10 @@ public class GxtEnumMappingFormatter implements MvwEnumMappingGeneratorIF {
 
         out.write("    public String getEnumName(){\n");
         out.write("        return(enumName);\n");
+        out.write("    }\n\n");
+
+        out.write("    public String getEmptyText(){\n");
+        out.write("        return(emptyText);\n");
         out.write("    }\n\n");
 
         out.write("}\n\n");

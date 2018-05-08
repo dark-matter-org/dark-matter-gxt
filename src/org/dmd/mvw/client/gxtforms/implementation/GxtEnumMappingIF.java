@@ -8,4 +8,5 @@ public interface GxtEnumMappingIF {
 	
 	public String getEnumName();
 	
+	public String getEmptyText();
 }
