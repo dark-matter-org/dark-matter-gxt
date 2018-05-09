@@ -9,6 +9,16 @@ editorName		GXTTextField
 useClass		org.dmd.mvw.client.gxtforms.editors.GXTTextField
 description		Used to display single valued string data.
 
+FieldEditorDefinition
+editorName		GXTEnumField
+useClass		org.dmd.mvw.client.gxtforms.editors.GXTEnumField
+description		Used to display any enum for which you have defined an EnumMapping and
+ specified the mappingGenerator as GXTEnumGenerator.
+ You must initialize the field with the generated enum mapping by calling its 
+ setEnumMapping() method.
+
+
+
 //FieldEditorDefinition
 //editorName		GXTBooleanOnOff
 //useClass		org.dmd.mvw.client.gxtforms.editors.GxtBooleanOnOff
