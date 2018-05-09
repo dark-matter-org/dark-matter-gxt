@@ -47,11 +47,15 @@ public class GXTEnumField extends MvwFieldEditor {
 			store.add(gev);
 		}
 		
+		combo.setEmptyText(mapping.getEmptyText());
 		setDisplayValue();
 	}
-	
-	public void setEmptyText(String text) {
-		combo.setEmptyText(text);
+		
+	/**
+	 * @return the current value, or null if none is selected.
+	 */
+	public GxtEnumValue getValue() {
+		return(combo.getValue());
 	}
 
 	@Override
