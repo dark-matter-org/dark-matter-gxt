@@ -127,6 +127,12 @@ public class GxtDualListReferenceField implements DmcPresentationIF {
 		return null;
 	}
 
+	@Override
+	public void setEmpty() {
+		// TODO Auto-generated method stub
+		
+	}
+
 //	// Our Unique ID assigned by the tracker
 //	int							ID;
 //	

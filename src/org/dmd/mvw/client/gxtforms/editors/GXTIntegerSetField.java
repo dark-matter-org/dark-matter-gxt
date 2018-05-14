@@ -11,4 +11,13 @@ public class GXTIntegerSetField extends GXTCSVSetField<Integer> {
 	public GXTIntegerSetField() {
 		super(new IntegerListValidator());
 	}
+	
+	@Override
+	public void setEmpty() {
+		if (adapter.hasValue()) {
+			widget.setText(null);
+			process();
+		}
+	}
+
 }

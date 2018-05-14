@@ -121,4 +121,10 @@ public class GxtStringSetFieldOLD extends GxtCSVSetFieldOLD<String> {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public void setEmpty() {
+		// TODO Auto-generated method stub
+		
+	}
 }

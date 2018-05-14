@@ -24,6 +24,10 @@ public class GXTEnumField extends MvwFieldEditor {
 	
 	private ListStore<GxtEnumValue>	store;
 	
+	// We hang on to this so that we can service calls to getValue()
+	// properly
+	private GxtEnumValue			currentValue;
+	
 	// A convenience handle to the adapter cast to an attribute
 	private DmcAttribute<?>	attribute;
 
@@ -37,6 +41,8 @@ public class GXTEnumField extends MvwFieldEditor {
 		combo.setTriggerAction(TriggerAction.ALL);
 		
 		addHandlersForEventObservation(combo, properties.label());
+		
+		currentValue = null;
 	}
 	
 	public void setEnumMapping(GxtEnumMappingIF mapping) {
@@ -55,7 +61,8 @@ public class GXTEnumField extends MvwFieldEditor {
 	 * @return the current value, or null if none is selected.
 	 */
 	public GxtEnumValue getValue() {
-		return(combo.getValue());
+		return(currentValue);
+//		return(combo.getValue());
 	}
 
 	@Override
@@ -164,9 +171,11 @@ public class GXTEnumField extends MvwFieldEditor {
             public void onSelection(SelectionEvent<T> event) {
             	if (event.getSelectedItem() == null) {
                 	DEBUG("GXTEnumField selected: null");
+                	currentValue = null;
             	}
             	else {
                 	DEBUG("GXTEnumField selected: " + ((GxtEnumValue)event.getSelectedItem()).getEnumValue());
+                	currentValue = (GxtEnumValue)event.getSelectedItem();
                 	
                 	try {
 						attribute.set(((GxtEnumValue)event.getSelectedItem()).getEnumValue());
@@ -188,14 +197,26 @@ public class GXTEnumField extends MvwFieldEditor {
 			GxtEnumValue current = store.findModelWithKey(attribute.getSV().toString());
 			
 			if (current == null){
-				DEBUG("\n\n *** GXTEnumFiled - urrent value for " + adapter.getAttributeInfo().name + " is null. *** \n\n");
+				DEBUG("\n\n *** GXTEnumFiled - current value for " + adapter.getAttributeInfo().name + " is null. *** \n\n");
 				combo.setValue(store.get(0));
+				
+				currentValue = null;
 			}
 			else{
 				DEBUG("GXTEnumFiled - current is: " + current.toString());
 				combo.setValue(current);
+				
+				currentValue = current;
 			}
 		}
+	}
+
+	@Override
+	public void setEmpty() {
+		combo.clear();
+		currentValue = null;
+		setDisplayValue();
+		isValid();
 	}
 
 

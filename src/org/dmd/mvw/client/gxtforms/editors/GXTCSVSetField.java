@@ -49,6 +49,8 @@ abstract public class GXTCSVSetField<E> extends MvwFieldEditor {
 		widget = new TextField();
 		widget.addValidator(validator);
 		
+		ourValidator = validator;
+		
 		widget.setAutoValidate(true);
 		// The validation of the field used to take place prior to our
 		// being called for the key up event, now, we get called before
@@ -65,12 +67,12 @@ abstract public class GXTCSVSetField<E> extends MvwFieldEditor {
 		});
 	}
 	
-	private void process() {
+	protected void process() {
 		if (attrIndex >= 0){
 			throw(new IllegalStateException("Indexed attributes not yet supported with this editor"));
 		}
 		else{
-			if (widget.getText() == null){
+			if (TextFieldUtil.isEmpty(widget)){
 				if (isValid()){
 					adapter.setEmpty();
 					READY();
@@ -147,7 +149,7 @@ abstract public class GXTCSVSetField<E> extends MvwFieldEditor {
 			return(true);
 
 		// We need a value, but we don't have one - not ready
-		if (mandatory && (widget.getText() == null)){
+		if (mandatory && TextFieldUtil.isEmpty(widget)){
 			return(false);
 		}
 		
@@ -210,11 +212,13 @@ abstract public class GXTCSVSetField<E> extends MvwFieldEditor {
 		if (rc)
 			return(rc);
 		
-		if (widget.getText() == null){
+		if (TextFieldUtil.isEmpty(widget)){
+			tracker.debug("Widget text is empty");
 			if (initialValues != null)
 				rc = true;
 		}
 		else{
+			tracker.debug("Widget text is *" + widget.getText() + "*");
 			if (initialValues == null)
 				rc = true;
 			else{
