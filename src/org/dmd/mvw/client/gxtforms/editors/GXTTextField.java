@@ -99,7 +99,7 @@ public class GXTTextField extends MvwFieldEditor {
 	
 	private void process() {
 		if (attrIndex >= 0){
-			if (widget.getText() == null){
+			if (TextFieldUtil.isEmpty(widget)){
 				if (isValid()){
 					try {
 						attribute.setMVnth(attrIndex, null);
@@ -129,7 +129,7 @@ public class GXTTextField extends MvwFieldEditor {
 			}
 		}
 		else{
-			if (widget.getText() == null){
+			if (TextFieldUtil.isEmpty(widget)){
 				if (isValid()){
 					adapter.setEmpty();
 					READY();
@@ -207,7 +207,7 @@ public class GXTTextField extends MvwFieldEditor {
 		// At this stage, we may or may not have been rendered. If we're not rendered, the
 		// isValid() will always be false, and that's not what we want. If we have a validator,
 		// we will call it directly.
-		if (mandatory && (widget.getText() == null)){
+		if (mandatory && TextFieldUtil.isEmpty(widget)){
 			return(false);
 		}
 		
@@ -263,7 +263,7 @@ public class GXTTextField extends MvwFieldEditor {
 		if (rc)
 			return(rc);
 		
-		if (widget.getText() == null){
+		if (TextFieldUtil.isEmpty(widget)){
 			if (initialValue != null)
 				rc = true;
 		}
@@ -343,6 +343,14 @@ public class GXTTextField extends MvwFieldEditor {
 	@Override
 	public void focus() {
 		widget.focus();
+	}
+
+	@Override
+	public void setEmpty() {
+		if (adapter.hasValue()) {
+			widget.setText(null);
+			process();
+		}
 	}
 
 

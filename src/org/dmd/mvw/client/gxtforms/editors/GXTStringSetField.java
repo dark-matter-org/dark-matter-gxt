@@ -12,4 +12,12 @@ public class GXTStringSetField extends GXTCSVSetField<String> {
 		super(new StringListValidator());
 	}
 
+	@Override
+	public void setEmpty() {
+		if (adapter.hasValue()) {
+			widget.setText(null);
+			process();
+		}
+	}
+
 }

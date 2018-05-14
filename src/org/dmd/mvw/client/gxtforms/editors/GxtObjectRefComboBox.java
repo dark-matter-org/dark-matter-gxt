@@ -124,6 +124,12 @@ public class GxtObjectRefComboBox implements DmcPresentationIF {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public void setEmpty() {
+		// TODO Auto-generated method stub
+		
+	}
 	
 //	final GxtObjectRefComboBox		instance;
 //	
