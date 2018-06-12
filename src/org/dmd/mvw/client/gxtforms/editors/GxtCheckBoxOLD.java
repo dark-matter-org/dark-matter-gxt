@@ -10,15 +10,16 @@ import org.dmd.dmc.types.DmcTypeBoolean;
 //import com.extjs.gxt.ui.client.event.Events;
 //import com.extjs.gxt.ui.client.event.FieldEvent;
 //import com.extjs.gxt.ui.client.event.Listener;
-//import com.extjs.gxt.ui.client.widget.form.Radio;
-//import com.extjs.gxt.ui.client.widget.form.RadioGroup;
+//import com.extjs.gxt.ui.client.widget.form.CheckBox;
 
 /**
- * The GxtBooleanOnOff is used to display boolean values as radio selection e.g. on/off
- * enabled/disabled etc. You must set the labels for the radio button choices.
+ * The GxtCheckBox is meant to display Boolean values in the form of a checkbox. This editor
+ * supports both single valued and multi-valued, indexed Booleans (which would align with
+ * a bit mask kind of display); you would have to set your own labels in such a situation,
+ * since the auto set labels probably wouldn't make much sense.
  */
-//public class GxtBooleanOnOff extends RadioGroup implements DmcPresentationIF {
-public class GxtBooleanOnOff implements DmcPresentationIF {
+//public class GxtCheckBox extends CheckBox implements DmcPresentationIF {
+public class GxtCheckBoxOLD implements DmcPresentationIF {
 
 	@Override
 	public void setLabel(String label) {
@@ -154,27 +155,28 @@ public class GxtBooleanOnOff implements DmcPresentationIF {
 //	// and thus we have to determine ourselves if our value has changed so that we can
 //	// correctly answer the tracker through the valueChanged() method.
 //	Boolean						initialValue;
-//	
-//	Radio						radioTrue;
-//	
-//	Radio						radioFalse;
 //
 //	DmcObject					DMO;
 //
-//	public GxtBooleanOnOff(){
+//	public GxtCheckBox(){
 //		attrIndex = -1;
 //
 //		setLabelStyle(LabelStyle.style);
+//		
+//		// If we don't set the box label to be blank, the check box will be rendered in the
+//		// center of the fields display. Setting this to blank will cause it to line up on
+//		// the left side of the fields area.
+//		setBoxLabel("");
 //
 //		listener = new Listener<FieldEvent>(){
 //			@Override
 //			public void handleEvent(FieldEvent be) {
 //				
 //				if (be.getType() == Events.Change){
-//					System.out.println("GxtBooleanOnOff - Something changed: " + adapter.getAttributeInfo().name + " - "+ be.getValue());
+//					System.out.println("GxtCheckBox: Something changed");
 //					if (attrIndex >= 0){
 //						try {
-//							attribute.setMVnth(attrIndex, be.getValue());
+//							attribute.setMVnth(attrIndex, getValue());
 //							READY();
 //						} catch (DmcValueException e) {
 //							throw(new IllegalStateException("Underlying attribute " + attribute.getName() + " should not throw an exception on setMVnth(): " + getValue(),e));
@@ -182,7 +184,15 @@ public class GxtBooleanOnOff implements DmcPresentationIF {
 //					}
 //					else{
 //						try {
-//							attribute.set(be.getValue());
+//							if (initialValue == null){
+//								if (getValue().booleanValue())
+//									attribute.set(getValue());
+//								else
+//									adapter.setEmpty();
+//							}
+//							else
+//								attribute.set(getValue());
+//							
 //							READY();
 //						} catch (DmcValueException e) {
 //							throw(new IllegalStateException("Underlying attribute " + attribute.getName() + " should not throw an exception on set(): " + getValue(),e));
@@ -193,26 +203,10 @@ public class GxtBooleanOnOff implements DmcPresentationIF {
 //			} // handleEvent
 //		};
 //		
-//		// BIG NOTE: we only listen to the True button
-//		radioTrue = new Radio();
-//		radioTrue.addListener(Events.Change, listener);
+//		addListener(Events.Change, listener);
 //		
-//		radioFalse = new Radio();
+//		setAutoValidate(true);
 //		
-//		add(radioTrue);
-//		add(radioFalse);
-//	}
-//	
-//	public boolean getCurrentValue(){
-//		return(radioTrue.getValue());
-//	}
-//	
-//	public void setTrueLabel(String label){
-//		radioTrue.setBoxLabel(label);
-//	}
-//	
-//	public void setFalseLabel(String label){
-//		radioFalse.setBoxLabel(label);
 //	}
 //	
 //	void READY(){
@@ -228,38 +222,47 @@ public class GxtBooleanOnOff implements DmcPresentationIF {
 //	@Override
 //	public void setAdapter(DmcAdapterIF adapter) {
 //		if (!adapter.getAttributeInfo().type.equals("Boolean"))
-//			throw(new IllegalStateException("The GxtBooleanOnOff editor is only applicable to Boolean values!"));
+//			throw(new IllegalStateException("The GxtCheckBox editor is only applicable to Boolean values!"));
 //		
 //		this.adapter 	= adapter;
 //		attribute 		= (DmcTypeBoolean) adapter;
 //		setDisplayValue();
 //	}
 //	
+//	@Override
+//	public void setReadOnly(boolean readonly){
+//		// NOTE: had to overload this because the x-form-readonly style is missing and the
+//		// field still appears editable but won't accept user input, which is confusing
+//		if (readonly)
+//			setEnabled(false);
+//		else
+//			setEnabled(true);
+//	}
+//
 //	void setDisplayValue(){
 //		if (attribute.getAttributeInfo().indexSize == 0){
 //			if (attribute.getSV() == null){
-//				// We have to set the initial value before altering the radio buttons
+//				// Always set initial value before altering our display component
 //				initialValue = null;
-//				radioFalse.setValue(true);
+//				setValue(false);
 //			}
 //			else{
-//				// We have to set the initial value before altering the radio buttons
+//				// Always set initial value before altering our display component
 //				initialValue = attribute.getSV();
-//				if (attribute.getSV())
-//					radioTrue.setValue(true);
-//				else
-//					radioFalse.setValue(true);
+//				setValue(attribute.getSV());
 //			}
 //		}
 //		else{
 //			Object val = attribute.getMVnth(attrIndex);
 //			if (val == null){
+//				// Always set initial value before altering our display component
 //				initialValue = null;
-//				radioTrue.setValue(false);
+//				setValue(false);
 //			}
 //			else{
+//				// Always set initial value before altering our display component
 //				initialValue = attribute.getMVnth(attrIndex);
-//				radioTrue.setValue(attribute.getMVnth(attrIndex));
+//				setValue(attribute.getMVnth(attrIndex));
 //			}
 //		}
 //		
@@ -298,39 +301,25 @@ public class GxtBooleanOnOff implements DmcPresentationIF {
 //	}
 //
 //	@Override
-//	public void setReadOnly(boolean readonly){
-//		// NOTE: had to overload this because the x-form-readonly style is missing and the
-//		// field still appears editable but won't accept user input, which is confusing
-//		if (readonly)
-//			setEnabled(false);
-//		else
-//			setEnabled(true);
-//	}
-//
-//	@Override
 //	public boolean valueChanged() {
 //		boolean rc = adapter.valueChanged();
-//		
-//		System.out.println("GxtBooleanOnOff 1 value changed " + rc);
 //		if (rc)
 //			return(rc);
 //		
-//		if (initialValue == null){
-//			if (radioTrue.getValue())
+//		if (getValue() == null){
+//			if (initialValue != null)
 //				rc = true;
 //		}
 //		else{
-//			if (initialValue == true){
-//				if (radioTrue.getValue() == false)
+//			if (initialValue == null){
+//				if (getValue().booleanValue() == true){
 //					rc = true;
+//				}
 //			}
-//			else{
-//				if (radioTrue.getValue() == true)
-//					rc = true;
-//			}
+//			else if (!getValue().equals(initialValue))
+//				rc = true;
 //		}
 //			
-//		System.out.println("GxtBooleanOnOff 2 value changed " + rc);
 //		return(rc);
 //	}
 //

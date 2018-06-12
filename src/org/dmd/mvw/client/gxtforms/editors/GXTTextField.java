@@ -8,15 +8,11 @@ import org.dmd.dmc.presentation.DmcAdapterIF;
 import org.dmd.mvw.client.mvwforms.base.MvwFieldEditor;
 
 import com.google.gwt.editor.client.EditorError;
-import com.google.gwt.event.dom.client.ChangeEvent;
-import com.google.gwt.event.dom.client.ChangeHandler;
 import com.google.gwt.event.dom.client.KeyUpEvent;
 import com.google.gwt.event.dom.client.KeyUpHandler;
-import com.google.gwt.event.logical.shared.ValueChangeEvent;
-import com.google.gwt.event.logical.shared.ValueChangeHandler;
+import com.google.gwt.safehtml.shared.SafeHtml;
+import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.user.client.ui.Widget;
-import com.sencha.gxt.widget.core.client.event.ValidEvent;
-import com.sencha.gxt.widget.core.client.event.ValidEvent.ValidHandler;
 import com.sencha.gxt.widget.core.client.form.TextField;
 import com.sencha.gxt.widget.core.client.form.Validator;
 
@@ -97,6 +93,21 @@ public class GXTTextField extends MvwFieldEditor {
 				
 	}
 	
+	/**
+	 * Allows you to add a validator.
+	 * @param validator the validator
+	 */
+	public void addValidator(Validator<String> validator) {
+		widget.addValidator(validator);
+	}
+	
+	/**
+	 * @return true if we have a value
+	 */
+	public boolean hasValue() {
+		return(!TextFieldUtil.isEmpty(widget));
+	}
+	
 	private void process() {
 		if (attrIndex >= 0){
 			if (TextFieldUtil.isEmpty(widget)){
@@ -175,7 +186,9 @@ public class GXTTextField extends MvwFieldEditor {
 
 	@Override
 	public void setToolTip(String tooltip) {
-		widget.setToolTip(tooltip);
+		SafeHtml safeHtml = SafeHtmlUtils.fromTrustedString(tooltip);
+		
+		widget.setToolTip(safeHtml);
 	}
 
 	@Override

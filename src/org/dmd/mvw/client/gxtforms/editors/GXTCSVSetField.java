@@ -13,6 +13,8 @@ import org.dmd.mvw.client.mvwforms.base.MvwFieldEditor;
 import com.google.gwt.editor.client.EditorError;
 import com.google.gwt.event.dom.client.KeyUpEvent;
 import com.google.gwt.event.dom.client.KeyUpHandler;
+import com.google.gwt.safehtml.shared.SafeHtml;
+import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.user.client.ui.Widget;
 import com.sencha.gxt.widget.core.client.form.TextField;
 import com.sencha.gxt.widget.core.client.form.Validator;
@@ -67,6 +69,10 @@ abstract public class GXTCSVSetField<E> extends MvwFieldEditor {
 		});
 	}
 	
+	public boolean hasValue() {
+		return(attribute.hasValue());
+	}
+	
 	protected void process() {
 		if (attrIndex >= 0){
 			throw(new IllegalStateException("Indexed attributes not yet supported with this editor"));
@@ -104,7 +110,8 @@ abstract public class GXTCSVSetField<E> extends MvwFieldEditor {
 	
 	@Override
 	public void setToolTip(String tooltip) {
-		widget.setToolTip(tooltip);
+		SafeHtml safeHtml = SafeHtmlUtils.fromTrustedString(tooltip);
+		widget.setToolTip(safeHtml);
 	}
 
 	@Override
@@ -242,8 +249,13 @@ abstract public class GXTCSVSetField<E> extends MvwFieldEditor {
 	public void setEnabled(boolean enabled) {
 		widget.setEnabled(enabled);
 		
+		// TODO: removed the call to isValid() because it was causing a loop with the tracker
+//		if (enabled)
+//			isValid();
+//		else
+		
 		if (enabled)
-			isValid();
+			widget.isCurrentValid();
 		else
 			widget.clearInvalid();
 	}
