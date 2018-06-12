@@ -17,6 +17,14 @@ description		Used to display any enum for which you have defined an EnumMapping 
  You must initialize the field with the generated enum mapping by calling its 
  setEnumMapping() method.
 
+FieldEditorDefinition
+editorName		GXTCheckBox
+useClass		org.dmd.mvw.client.gxtforms.editors.GxtCheckBox
+description		Used to display boolean values in a check box. Indexed Booleans
+ are also supported (which would align with a bit mask kind of display); you
+ would have to set your own labels in such a situation, since the auto set
+ labels probably wouldn't make much sense.
+
 
 
 //FieldEditorDefinition
@@ -27,14 +35,6 @@ description		Used to display any enum for which you have defined an EnumMapping 
 // Indexed Booleans are also supported (which would align with a bit mask kind
 // of display); you would have to set your own labels in such a situation, since
 // the auto set labels probably wouldn't make much sense.
-//
-//FieldEditorDefinition
-//editorName		GXTCheckBox
-//useClass		org.dmd.mvw.client.gxtforms.editors.GxtCheckBox
-//description		Used to display boolean values in a check box. Indexed Booleans
-// are also supported (which would align with a bit mask kind of display); you
-// would have to set your own labels in such a situation, since the auto set
-// labels probably wouldn't make much sense.
 //
 //FieldEditorDefinition
 //editorName		GXTCheckBoxAlternate

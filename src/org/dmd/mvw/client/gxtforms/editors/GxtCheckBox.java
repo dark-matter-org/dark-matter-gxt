@@ -1,16 +1,17 @@
 package org.dmd.mvw.client.gxtforms.editors;
 
-import org.dmd.dmc.DmcObject;
 import org.dmd.dmc.DmcValueException;
 import org.dmd.dmc.presentation.DmcAdapterIF;
-import org.dmd.dmc.presentation.DmcPresentationIF;
-import org.dmd.dmc.presentation.DmcPresentationTrackerIF;
 import org.dmd.dmc.types.DmcTypeBoolean;
+import org.dmd.mvw.client.mvwforms.base.MvwFieldEditor;
 
-//import com.extjs.gxt.ui.client.event.Events;
-//import com.extjs.gxt.ui.client.event.FieldEvent;
-//import com.extjs.gxt.ui.client.event.Listener;
-//import com.extjs.gxt.ui.client.widget.form.CheckBox;
+import com.google.gwt.event.logical.shared.ValueChangeEvent;
+import com.google.gwt.event.logical.shared.ValueChangeHandler;
+import com.google.gwt.safehtml.shared.SafeHtml;
+import com.google.gwt.safehtml.shared.SafeHtmlUtils;
+import com.google.gwt.user.client.ui.Widget;
+import com.sencha.gxt.widget.core.client.form.CheckBox;
+
 
 /**
  * The GxtCheckBox is meant to display Boolean values in the form of a checkbox. This editor
@@ -19,340 +20,204 @@ import org.dmd.dmc.types.DmcTypeBoolean;
  * since the auto set labels probably wouldn't make much sense.
  */
 //public class GxtCheckBox extends CheckBox implements DmcPresentationIF {
-public class GxtCheckBox implements DmcPresentationIF {
+public class GxtCheckBox extends MvwFieldEditor {
+	
+	protected CheckBox		widget;
+	
+	// A convenience handle to the adapter cast to an attribute
+	private DmcTypeBoolean	attribute;
 
-	@Override
-	public void setLabel(String label) {
-		// TODO Auto-generated method stub
+	// We hang on to our initial value in case we have the situation where we are marked
+	// as invalid (because of a validator). If we're invalid, we won't alter the adapter
+	// and thus we have to determine ourselves if our value has changed so that we can
+	// correctly answer the tracker through the valueChanged() method.
+	private Boolean			initialValue;
+
+	public GxtCheckBox() {
+		widget = new CheckBox();
 		
-	}
-
-	@Override
-	public String getLabel() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setToolTip(String tooltip) {
-		// TODO Auto-generated method stub
+		widget.addValueChangeHandler(new ValueChangeHandler<Boolean>() {
+			
+			@Override
+			public void onValueChange(ValueChangeEvent<Boolean> event) {
+				if (attrIndex >= 0){
+					try {
+						attribute.setMVnth(attrIndex, widget.getValue());
+						READY();
+					} catch (DmcValueException e) {
+						throw(new IllegalStateException("Underlying attribute " + attribute.getName() + " should not throw an exception on setMVnth(): " + widget.getValue(),e));
+					}
+				}
+				else{
+					try {
+						if (initialValue == null){
+							if (widget.getValue().booleanValue())
+								attribute.set(widget.getValue());
+							else
+								adapter.setEmpty();
+						}
+						else
+							attribute.set(widget.getValue());
+						
+						READY();
+					} catch (DmcValueException e) {
+						throw(new IllegalStateException("Underlying attribute " + attribute.getName() + " should not throw an exception on set(): " + widget.getValue(),e));
+					}
+	
+				}
+			}
+		});
 		
-	}
+		// If we don't set the box label to be blank, the check box will be rendered in the
+		// center of the fields display. Setting this to blank will cause it to line up on
+		// the left side of the fields area.
+		widget.setBoxLabel("");
 
-	@Override
-	public void setMandatory(boolean mandatory) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setReadOnly(boolean readonly) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setAdapter(DmcAdapterIF adapter) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public DmcAdapterIF getAdapter() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean isReady() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean isValid() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void setTracker(DmcPresentationTrackerIF t, int id) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public int getID() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public void resetToExisting() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public boolean valueChanged() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void setEnabled(boolean flag) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setValueIndex(int index) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void setDMO(DmcObject dmo) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public DmcObject getDMO() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void setEmpty() {
-		// TODO Auto-generated method stub
-		
+		widget.setAutoValidate(true);
 	}
 	
-//	// Our Unique ID assigned by the tracker
-//	int							ID;
-//	
-//	// Whether or not we're mandatory
-//	boolean 					mandatory;
-//	
-//	// Our attribute value adapter that also contains the original value (if any)
-//	DmcAdapterIF				adapter;
-//	
-//	// A convenience handle to the adapter cast to an attribute
-//	DmcTypeBoolean				attribute;
-//	
-//	// The thing that may be tracking our state of readiness
-//	DmcPresentationTrackerIF	tracker;
-//	
-//	// This is only set if we're handling an indexed attribute, otherwise it's -1
-//	int							attrIndex;
-//
-//	// Listener for changes in our field value - we actually listen to all key up events
-//	Listener<FieldEvent>		listener;
-//	
-//	// We hang on to our initial value in case we have the situation where we are marked
-//	// as invalid (because of a validator). If we're invalid, we won't alter the adapter
-//	// and thus we have to determine ourselves if our value has changed so that we can
-//	// correctly answer the tracker through the valueChanged() method.
-//	Boolean						initialValue;
-//
-//	DmcObject					DMO;
-//
-//	public GxtCheckBox(){
-//		attrIndex = -1;
-//
-//		setLabelStyle(LabelStyle.style);
-//		
-//		// If we don't set the box label to be blank, the check box will be rendered in the
-//		// center of the fields display. Setting this to blank will cause it to line up on
-//		// the left side of the fields area.
-//		setBoxLabel("");
-//
-//		listener = new Listener<FieldEvent>(){
-//			@Override
-//			public void handleEvent(FieldEvent be) {
-//				
-//				if (be.getType() == Events.Change){
-//					System.out.println("GxtCheckBox: Something changed");
-//					if (attrIndex >= 0){
-//						try {
-//							attribute.setMVnth(attrIndex, getValue());
-//							READY();
-//						} catch (DmcValueException e) {
-//							throw(new IllegalStateException("Underlying attribute " + attribute.getName() + " should not throw an exception on setMVnth(): " + getValue(),e));
-//						}
-//					}
-//					else{
-//						try {
-//							if (initialValue == null){
-//								if (getValue().booleanValue())
-//									attribute.set(getValue());
-//								else
-//									adapter.setEmpty();
-//							}
-//							else
-//								attribute.set(getValue());
-//							
-//							READY();
-//						} catch (DmcValueException e) {
-//							throw(new IllegalStateException("Underlying attribute " + attribute.getName() + " should not throw an exception on set(): " + getValue(),e));
-//						}
-//
-//					}
-//				}
-//			} // handleEvent
-//		};
-//		
-//		addListener(Events.Change, listener);
-//		
-//		setAutoValidate(true);
-//		
-//	}
-//	
-//	void READY(){
-//		if (tracker != null)
-//			tracker.isReady(this);
-//	}
-//	
-//	void NOTREADY(){
-//		if (tracker != null)
-//			tracker.isNotReady(this);
-//	}
-//
-//	@Override
-//	public void setAdapter(DmcAdapterIF adapter) {
-//		if (!adapter.getAttributeInfo().type.equals("Boolean"))
-//			throw(new IllegalStateException("The GxtCheckBox editor is only applicable to Boolean values!"));
-//		
-//		this.adapter 	= adapter;
-//		attribute 		= (DmcTypeBoolean) adapter;
-//		setDisplayValue();
-//	}
-//	
-//	@Override
-//	public void setReadOnly(boolean readonly){
-//		// NOTE: had to overload this because the x-form-readonly style is missing and the
-//		// field still appears editable but won't accept user input, which is confusing
-//		if (readonly)
-//			setEnabled(false);
-//		else
-//			setEnabled(true);
-//	}
-//
-//	void setDisplayValue(){
-//		if (attribute.getAttributeInfo().indexSize == 0){
-//			if (attribute.getSV() == null){
-//				// Always set initial value before altering our display component
-//				initialValue = null;
-//				setValue(false);
-//			}
-//			else{
-//				// Always set initial value before altering our display component
-//				initialValue = attribute.getSV();
-//				setValue(attribute.getSV());
-//			}
-//		}
-//		else{
-//			Object val = attribute.getMVnth(attrIndex);
-//			if (val == null){
-//				// Always set initial value before altering our display component
-//				initialValue = null;
-//				setValue(false);
-//			}
-//			else{
-//				// Always set initial value before altering our display component
-//				initialValue = attribute.getMVnth(attrIndex);
-//				setValue(attribute.getMVnth(attrIndex));
-//			}
-//		}
-//		
-//	}
-//
+	public Boolean getValue() {
+		return(widget.getValue());
+	}
+
+	void setDisplayValue(){
+		if (attribute.getAttributeInfo().indexSize == 0){
+			if (attribute.getSV() == null){
+				// Always set initial value before altering our display component
+				initialValue = null;
+				widget.setValue(false);
+			}
+			else{
+				// Always set initial value before altering our display component
+				initialValue = attribute.getSV();
+				widget.setValue(attribute.getSV());
+			}
+		}
+		else{
+			Object val = attribute.getMVnth(attrIndex);
+			if (val == null){
+				// Always set initial value before altering our display component
+				initialValue = null;
+				widget.setValue(false);
+			}
+			else{
+				// Always set initial value before altering our display component
+				initialValue = attribute.getMVnth(attrIndex);
+				widget.setValue(attribute.getMVnth(attrIndex));
+			}
+		}
+		
+	}
+
+	// TODO: at some point, we may have to overload this to operate as
+	// it did originally, but for now, we store a single label in the MvwEditor
 //	@Override
 //	public void setLabel(String label) {
 //		if (attrIndex >= 0){
 //			int display = attrIndex+1;
-//			setFieldLabel(label + " " + display);
+//			widget.setBoxLabel(label + " " + display);
+////			widget.setFieldLabel(label + " " + display);
 //		}
-//		else
-//			setFieldLabel(label);
-//	}
-//
-//	@Override
-//	public void setMandatory(boolean m) {
-//		mandatory = m;
-//	}
-//
-//	@Override
-//	public DmcAdapterIF getAdapter() {
-//		return(adapter);
-//	}
-//
-//	@Override
-//	public boolean isReady(){
-//		// We're always ready
-//		return(true);
-//	}
-//
-//	@Override
-//	public void setTracker(DmcPresentationTrackerIF t, int id) {
-//		tracker = t;
-//		ID = id;
-//	}
-//
-//	@Override
-//	public boolean valueChanged() {
-//		boolean rc = adapter.valueChanged();
-//		if (rc)
-//			return(rc);
-//		
-//		if (getValue() == null){
-//			if (initialValue != null)
-//				rc = true;
+//		else {
+//			widget.setBoxLabel(label);
+////			widget.setFieldLabel(label);
 //		}
-//		else{
-//			if (initialValue == null){
-//				if (getValue().booleanValue() == true){
-//					rc = true;
-//				}
-//			}
-//			else if (!getValue().equals(initialValue))
-//				rc = true;
-//		}
-//			
-//		return(rc);
 //	}
-//
-//	@Override
-//	public void setValueIndex(int index) {
-//		attrIndex = index;
-//	}
-//
-//	@Override
-//	public int getID() {
-//		return(ID);
-//	}
-//
-//	@Override
-//	public void resetToExisting() {
-//		adapter.resetToExisting();
-//		setDisplayValue();
-//	}
-//		
-//	@Override
-//	public String getLabel() {
-//		return(getFieldLabel());
-//	}
-//		
-//	@Override
-//	public void setDMO(DmcObject dmo) {
-//		DMO = dmo;
-//	}
-//
-//	@Override
-//	public DmcObject getDMO() {
-//		return(DMO);
-//	}
+
+	@Override
+	public boolean valueChanged() {
+		boolean rc = adapter.valueChanged();
+		if (rc)
+			return(rc);
 		
+		if (widget.getValue() == null){
+			if (initialValue != null)
+				rc = true;
+		}
+		else{
+			if (initialValue == null){
+				if (widget.getValue().booleanValue() == true){
+					rc = true;
+				}
+			}
+			else if (!widget.getValue().equals(initialValue))
+				rc = true;
+		}
+			
+		return(rc);
+	}
+		
+	@Override
+	public void setToolTip(String tooltip) {
+		SafeHtml safeHtml = SafeHtmlUtils.fromTrustedString(tooltip);
+		widget.setToolTip(safeHtml);
+	}
+
+	@Override
+	public void setMandatory(boolean mandatory) {
+		this.mandatory = mandatory;
+	}
+
+	@Override
+	public void setReadOnly(boolean readonly) {
+		// NOTE: had to overload this because the x-form-readonly style is missing and the
+		// field still appears editable but won't accept user input, which is confusing
+		if (readonly)
+			setEnabled(false);
+		else
+			setEnabled(true);
+	}
+
+	@Override
+	public void setAdapter(DmcAdapterIF adapter) {
+		if (!adapter.getAttributeInfo().type.equals("Boolean"))
+		throw(new IllegalStateException("The GxtCheckBox editor is only applicable to Boolean values!"));
+	
+		this.adapter 	= adapter;
+		attribute 		= (DmcTypeBoolean) adapter;
+		setDisplayValue();
+	}
+
+	@Override
+	public boolean isReady() {
+		// We're always ready
+		return(true);
+	}
+
+	@Override
+	public boolean isValid() {
+		return(true);
+	}
+
+	@Override
+	public void resetToExisting() {
+		adapter.resetToExisting();
+		setDisplayValue();
+	}
+
+	@Override
+	public void setEmpty() {
+		if (adapter.hasValue()) {
+			adapter.setEmpty();
+			setDisplayValue();
+		}
+	}
+
+	@Override
+	public void setEnabled(boolean flag) {
+		widget.setEnabled(flag);
+	}
+
+	@Override
+	public Widget asWidget() {
+		return(widget);
+	}
+
+	@Override
+	public void focus() {
+		widget.focus();
+		
+	}
+
 
 }
