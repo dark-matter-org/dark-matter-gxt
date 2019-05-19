@@ -24,6 +24,7 @@
             </td>
             <td colspan="2" class="description">            <div class="argvector">com.google.gwt.activity.shared.ActivityManager </div> <p/> 
             The activity manager keeps track of all Activities running within the context of one container widget. It listens for PlaceChangeRequestEvents and notifies the current activity when a new Place has been requested. If the current Activity allows the Place change (Activity.onMayStop() returns null) or the user allows it (by clicking OK in the confirmation dialog), the ActivityManager discards the current Activity and starts the new one.
+
             </td>
         </tr>
         <tr>
@@ -40,6 +41,7 @@
             </td>
             <td colspan="2" class="description">            <div class="argvector">org.dmd.mvw.client.mvw.MvwActivityMapper </div> <p/> 
             The activty mapper is a generic component that can be used for all applications; there is no need to create a separate activity mapper for each application. This works because of a couple of design choices: 1. Places map  one-to-one with Activities and 2. All Places are derived from a common MvwPlace which knows how to construct the Activity associated with it.
+
             </td>
         </tr>
         <tr>
@@ -56,6 +58,7 @@
             </td>
             <td colspan="2" class="description">            <div class="argvector">org.dmd.mvw.client.mvw.MvwAsyncErrorHandlerIF </div> <p/> 
             The centralAsyncErrorHandler is a place holder for a controller that implements the MvwAsyncErrorHandlerIF interface. This is a bit tricky. We don't know in advance which controller will implement this and we don't want to have to introduce dependencies into generated code on the run context interface associated with the controller that handles these errors. If code splitting is used, we'll fill in the contruction attribute and the item order (to be greater than that of the Controller), based on the Controller that is flagged as the centralAsyncErrorHandler.
+
             </td>
         </tr>
         <tr>
@@ -72,6 +75,7 @@
             </td>
             <td colspan="2" class="description">            <div class="argvector">org.dmd.mvw.client.mvw.MvwEventBus </div> <p/> 
             The overall application event bus.
+
             </td>
         </tr>
         <tr>
@@ -88,6 +92,7 @@
             </td>
             <td colspan="2" class="description">            <div class="argvector">org.dmd.mvw.client.gxt.cache.GxtCache </div> <p/> 
             The gxtCache provides centralized caching of Dark Matter Objects (DMOs) wrapped for use with Sencha's GXT widgets. Before adding objects returned via DMP GetResponses you should ensure that the component performing the retrieval has called addWrapperFactory() on the cache to add the appropriate GxtWrapperFactoryIF implementation to wrap the objects as they are added.
+
             </td>
         </tr>
         <tr>
@@ -104,6 +109,7 @@
             </td>
             <td colspan="2" class="description">            <div class="argvector">com.google.gwt.place.shared.PlaceHistoryHandler </div> <p/> 
             The history handler monitors place change and history events and keeps them in sync.
+
             </td>
         </tr>
         <tr>
@@ -120,6 +126,7 @@
             </td>
             <td colspan="2" class="description">            <div class="argvector">org.dmd.mvw.client.mvw.MvwAsyncPlaceController </div> <p/> 
             The place controller is used to initiate navigation to different places by calling its goTo() method.
+
             </td>
         </tr>
         <tr>
@@ -138,6 +145,7 @@
     <div class="sidebarTitle"> Modules </div>
         <a class="navLink" href="gxt.html"> gxt</a>
         <a class="navLink" href="gxtforms.html"> gxtforms</a>
+        <a class="navLink" href="gxtproperties.html"> gxtproperties</a>
         <a class="navLink" href="mvw.html"> mvw</a>
         <p/>
     <div class="sidebarTitle"> Summaries </div>
