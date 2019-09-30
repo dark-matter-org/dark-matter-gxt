@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.connectifex</groupId>
   <artifactId>dark-matter-gxt</artifactId>
-  <version>2.0.1</version>
+  <version>2.1.0</version>
   
   <repositories>
     <repository>
@@ -35,6 +35,17 @@
     </repository>
     
   </repositories>
+
+  <distributionManagement>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+    <repository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+  </distributionManagement>
 
   <dependencies>
     <dependency>
@@ -76,26 +87,26 @@
     <dependency>
       <groupId>com.connectifex</groupId>
       <artifactId>dark-matter-data</artifactId>
-      <version>3.0.11</version>
+      <version>3.1.0</version>
     </dependency>
     
     <dependency>
       <groupId>com.connectifex</groupId>
       <artifactId>dark-matter-data</artifactId>
-      <version>3.0.11</version>
+      <version>3.1.0</version>
 	  <classifier>sources</classifier>
     </dependency>
     
     <dependency>
       <groupId>com.connectifex</groupId>
       <artifactId>dark-matter-mvw</artifactId>
-      <version>2.0.2</version>
+      <version>2.1.0</version>
     </dependency>
     
     <dependency>
       <groupId>com.connectifex</groupId>
       <artifactId>dark-matter-mvw</artifactId>
-      <version>2.0.2</version>
+      <version>2.1.0</version>
 	  <classifier>sources</classifier>
     </dependency>
   </dependencies>    
@@ -114,8 +125,9 @@
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.7.0</version>
+        <version>3.8.1</version>
         <configuration>
+          <encoding>utf8</encoding>
           <source>1.8</source>
           <target>1.8</target>
         </configuration>
@@ -123,16 +135,86 @@
 	 <plugin>
 		<groupId>org.apache.maven.plugins</groupId>
 		<artifactId>maven-source-plugin</artifactId>
-		<version>2.0.4</version>
+		<version>3.1.0</version>
 		<executions>
 			<execution>
 				<id>attach-sources</id>
 				<goals>
-		        		<goal>jar</goal>
+		          <goal>jar</goal>
 				</goals>
 		    </execution>
 		</executions>
 	 </plugin>
+	 
+	<plugin>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-javadoc-plugin</artifactId>
+		<version>3.1.1</version>
+		<configuration>
+			<doclint>none</doclint>  <!-- Turnoff all checks -->
+		</configuration>
+		<executions>
+			<execution>
+				<id>attach-javadocs</id>
+				<goals>
+					<goal>jar</goal>
+				</goals>
+			</execution>
+		</executions>
+	</plugin>
+	 
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-gpg-plugin</artifactId>
+      <version>1.5</version>
+      <executions>
+        <execution>
+          <id>sign-artifacts</id>
+          <phase>verify</phase>
+          <goals>
+            <goal>sign</goal>
+          </goals>
+        </execution>
+      </executions>
+    </plugin>
+
+    <plugin>
+      <groupId>org.sonatype.plugins</groupId>
+      <artifactId>nexus-staging-maven-plugin</artifactId>
+      <version>1.6.7</version>
+      <extensions>true</extensions>
+      <configuration>
+        <serverId>ossrh</serverId>
+        <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+        <autoReleaseAfterClose>true</autoReleaseAfterClose>
+      </configuration>
+    </plugin>
+
     </plugins>
   </build>
+  <name>dark-matter-gxt</name>
+  <url>https://github.com/dark-matter-org/dark-matter-gxt</url>
+  <description>The dark-matter GXT project provides wrappers around the Sencha GXT Google Web Toolkit (GWT) libraries and extends them to interoperate with the base dark-matter DSL concepts.</description>
+  
+  <licenses>
+	  <license>
+	    <name>GNU Lesser General Public License, Version 3.0</name>
+	    <url>https://www.gnu.org/licenses/lgpl-3.0.en.html</url>
+	  </license>
+  </licenses>
+
+ <developers>
+    <developer>
+      <name>Peter Strong</name>
+      <email>peter@connectifex.com</email>
+      <organization>connectifex</organization>
+      <organizationUrl>https://github.com/dark-matter-org</organizationUrl>
+    </developer>
+  </developers>
+  
+ <scm>
+ 	<url>https://github.com/dark-matter-org/dark-matter-gxt/tree/master</url>
+ 	<connection>scm:git:git://github.com/dark-matter-org/dark-matter-gxt</connection>
+ 	<developerConnection>scm:git:git://github.com/dark-matter-org/dark-matter-gxt</developerConnection>
+ </scm>
 </project>
